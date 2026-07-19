@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DraftCP — Il plug-in AutoCAD per la restituzione 2D da nuvole di punti</title>
+  <meta name="description" content="DraftCP automatizza il disegno CAD 2D sopra le nuvole di punti: gestione viste, tracciamento muri con tolleranze geometriche, inserimento porte e finestre. Plugin per AutoCAD 2018+ su Windows. Sviluppato da un geometra per i professionisti.">
+  <meta name="keywords" content="DraftCP, AutoCAD plugin, nuvola di punti, point cloud, restituzione grafica, disegno CAD, rilievo laser scanner, geometra, AutoLISP, OCG">
+  <meta name="author" content="O.C.G.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://draftcp.it/">
+  <meta property="og:title" content="DraftCP — Il plug-in AutoCAD per la restituzione 2D da nuvole di punti">
+  <meta property="og:description" content="DraftCP automatizza il disegno CAD 2D sopra le nuvole di punti. Gestione viste, tracciamento muri, inserimento porte e finestre. Sviluppato da un geometra per i professionisti.">
+  <meta property="og:image" content="https://draftcp.it/Manual/Sezione_00_Home_page/logo_draftcp.png">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="DraftCP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DraftCP — Plugin AutoCAD per nuvole di punti">
+  <meta name="twitter:description" content="Automatizza la restituzione 2D da nuvole di punti in AutoCAD. Sviluppato da un geometra per i professionisti.">
+  <meta name="twitter:image" content="https://draftcp.it/Manual/Sezione_00_Home_page/logo_draftcp.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://draftcp.it/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Manual/Sezione_00_Home_page/logo_draftcp.png">
+  <link rel="apple-touch-icon" href="Manual/Sezione_00_Home_page/logo_draftcp.png">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DraftCP",
+    "applicationCategory": "CAD Plugin",
+    "operatingSystem": "Windows 10, Windows 11",
+    "description": "Plugin AutoCAD per la restituzione 2D da nuvole di punti. Gestione viste, tracciamento muri, inserimento infissi.",
+    "author": { "@type": "Organization", "name": "O.C.G." },
+    "url": "https://draftcp.it",
+    "softwareVersion": "1.0.2",
+    "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       HEADER
+       ════════════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <a href="#" class="header-brand" aria-label="DraftCP — Torna alla home">
+      <img src="Manual/Sezione_00_Home_page/logo_draftcp.png"
+           alt="DraftCP Logo"
+           class="header-logo"
+           width="36" height="36">
+      <span class="header-name">DraftCP</span>
+    </a>
+    <nav class="header-nav" aria-label="Navigazione principale">
+      <a href="#funzionalita">Funzionalità</a>
+      <a href="#come-funziona">Come Funziona</a>
+      <a href="#download">Download</a>
+      <a href="Manual/index.html" target="_blank" rel="noopener noreferrer">Guida Utente</a>
+      <a href="#download" class="nav-cta" id="nav-download-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Scarica
+      </a>
+    </nav>
+    <button class="hamburger"
+            id="hamburger-btn"
+            aria-label="Apri menu di navigazione"
+            aria-expanded="false"
+            aria-controls="mobile-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <nav class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu di navigazione mobile">
+    <a href="#funzionalita">Funzionalità</a>
+    <a href="#come-funziona">Come Funziona</a>
+    <a href="#download">Download</a>
+    <a href="Manual/index.html" target="_blank" rel="noopener noreferrer">Guida Utente</a>
+    <a href="#chi-sono">Chi Sono</a>
+    <span class="mobile-cta mobile-cta-soon" aria-disabled="true">
+      🔒&nbsp; Download in arrivo
+    </span>
+  </nav>
+
+
+  <main>
+
+    <!-- ════════════════════════════════════════════════════════
+         HERO
+         ════════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Presentazione DraftCP">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge" role="status">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Plugin AutoCAD &nbsp;·&nbsp; v1.0.2 — in arrivo
+        </div>
+
+        <h1 class="hero-title">
+          Disegna sulle nuvole di punti.<br>
+          <span class="highlight">In metà del tempo.</span>
+        </h1>
+
+        <p class="hero-sub">
+          DraftCP è il plug-in AutoCAD che automatizza la restituzione 2D dei tuoi rilievi:
+          gestione delle viste, tracciamento dei muri con tolleranze geometriche,
+          inserimento intelligente di porte e finestre.
+          Sviluppato da un geometra, per i professionisti.
+        </p>
+
+        <div class="hero-actions">
+          <span class="btn-soon" id="hero-download-btn" aria-disabled="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+            Download in Arrivo
+          </span>
+          <a href="Manual/index.html"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn-secondary"
+             id="hero-guide-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+            </svg>
+            Leggi la Guida Utente
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            Windows 10 / 11
+          </div>
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            AutoCAD 2018+
+          </div>
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Sviluppato da O.C.G.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Screenshot -->
+    <div class="hero-screenshot-wrap">
+      <div class="reveal">
+        <img class="screenshot-img"
+             src="Manual/Sezione_00_Home_page/Finetra_dialogo_dashboard.png"
+             alt="La Dashboard di DraftCP: il pannello di controllo che mostra l'elenco completo delle viste di un progetto reale"
+             loading="lazy">
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ════════════════════════════════════════════════════════
+         PROBLEMA / SOLUZIONE
+         ════════════════════════════════════════════════════════ -->
+    <section class="section" id="perche">
+      <div class="section-inner">
+        <p class="section-label reveal">Perché DraftCP</p>
+        <h2 class="section-title reveal">Nato da un problema reale.<br>
+          <span>Costruito da chi lo ha vissuto.</span>
+        </h2>
+        <p class="section-sub reveal">
+          Un geometra che ha cercato — e non trovato — lo strumento giusto per lavorare sulle nuvole di punti.
+          Così ha deciso di costruirlo.
+        </p>
+
+        <div class="problem-grid">
+
+          <div class="problem-card reveal">
+            <div class="ps-icon problem" aria-hidden="true">⚠️</div>
+            <h3 class="ps-title">Il problema</h3>
+            <p class="ps-text">
+              Dal 2019 lavoro con le nuvole di punti. Ho cercato a lungo uno strumento che mi aiutasse
+              a fare questo lavoro in modo più rapido, più preciso e meno ripetitivo — non un software
+              che generasse i disegni in automatico, ma uno che mettesse nelle mie mani le operazioni
+              giuste al momento giusto.
+            </p>
+            <p class="ps-text">
+              Online non trovavo niente di adeguato: o troppo costoso, o troppo automatizzato per
+              garantire il controllo su quello che si consegna, o semplicemente non progettato per il
+              disegno tecnico bidimensionale. Eppure il disegno CAD 2D è ancora oggi il sistema più
+              utilizzato negli studi tecnici per consegnare piante, per le pratiche edilizie e catastali.
+            </p>
+          </div>
+
+          <div class="solution-card reveal reveal-delay-2">
+            <div class="ps-icon solution" aria-hidden="true">✅</div>
+            <h3 class="ps-title">La soluzione</h3>
+            <p class="ps-text">
+              Così ho iniziato a studiare AutoLISP — uno dei primi e più efficienti linguaggi di
+              programmazione per l'ambiente CAD — e ho costruito i miei primi comandi, mettendoli
+              a disposizione dei colleghi dello studio. Anno dopo anno, commessa dopo commessa, il
+              codice è cresciuto.
+            </p>
+            <p class="ps-text">
+              Oggi DraftCP è il risultato di anni di lavoro sul campo, testato su centinaia di rilievi
+              reali. Non sostituisce il professionista: lo affianca, eliminando le ore di operazioni
+              ripetitive che — fatte a mano — rischiano anche di produrre errori di distrazione.
+              Uno strumento sviluppato da un professionista come te.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════════════════════════════════════════════════════════
+         FUNZIONALITÀ
+         ════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="funzionalita">
+      <div class="section-inner">
+        <p class="section-label reveal">Funzionalità</p>
+        <h2 class="section-title reveal">11 comandi integrati.<br>
+          <span>Un workflow completo.</span>
+        </h2>
+        <p class="section-sub reveal">
+          Ogni comando è progettato per un'operazione specifica, rapida e precisa.
+          Dall'orientamento iniziale del progetto all'esportazione finale.
+        </p>
+
+        <div class="features-grid" role="list">
+
+          <!-- Dashboard -->
+          <article class="feature-card reveal" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPD</span>
+            <h3 class="feature-name">Dashboard</h3>
+            <p class="feature-desc">Il centro di controllo del progetto. Visualizza tutte le viste create, naviga tra i piani e accedi a tutti i comandi da un'unica finestra.</p>
+          </article>
+
+          <!-- Orientamento -->
+          <article class="feature-card reveal reveal-delay-1" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="12,2 14.5,9 12,8 9.5,9" fill="#3d9cf0"/>
+                <circle cx="12" cy="12" r="2" fill="#3d9cf0"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPS</span>
+            <h3 class="feature-name">Orientamento e Setup</h3>
+            <p class="feature-desc">Imposta il sistema di riferimento del progetto rispetto alla nuvola di punti. Definisce l'UCS di base da cui vengono generate tutte le viste.</p>
+          </article>
+
+          <!-- Creazione Viste -->
+          <article class="feature-card reveal reveal-delay-2" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPV</span>
+            <h3 class="feature-name">Generazione Viste</h3>
+            <p class="feature-desc">Crea le sezioni orizzontali (piante) della nuvola con layer system automatico e ordinato. Ogni vista è gestita su layer dedicati e indipendenti.</p>
+          </article>
+
+          <!-- Navigazione Rapida -->
+          <article class="feature-card reveal reveal-delay-3" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <polyline points="15 6 21 12 15 18"/>
+              </svg>
+            </div>
+            <span class="feature-badge">AC</span>
+            <h3 class="feature-name">Navigazione Rapida</h3>
+            <p class="feature-desc">Passa da un piano all'altro con due tasti. Attiva vista, layer filter e punto di vista corretto in frazioni di secondo, senza usare il mouse.</p>
+          </article>
+
+          <!-- Tracciamento Muri -->
+          <article class="feature-card reveal" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <rect x="2" y="4" width="20" height="3" rx="1"/>
+                <rect x="2" y="10.5" width="20" height="3" rx="1"/>
+                <rect x="2" y="17" width="20" height="3" rx="1"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPM</span>
+            <h3 class="feature-name">Tracciamento Muri</h3>
+            <p class="feature-desc">Disegna muri in pianta con controllo automatico di parallelismo e ortogonalità rispetto all'UCS. Tolleranze lineari e angolari configurabili per ogni rilievo.</p>
+          </article>
+
+          <!-- Finestre -->
+          <article class="feature-card reveal reveal-delay-1" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <line x1="12" y1="3" x2="12" y2="21"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPF</span>
+            <h3 class="feature-name">Inserimento Finestre</h3>
+            <p class="feature-desc">Inserisce la rappresentazione delle finestre in pianta con geometria dinamica adattata alla larghezza del muro rilevato. Layer automatici.</p>
+          </article>
+
+          <!-- Porte -->
+          <article class="feature-card reveal reveal-delay-2" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                <path d="M9 21V9"/>
+                <circle cx="16" cy="13" r="1.2" fill="#3d9cf0" stroke="none"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPP</span>
+            <h3 class="feature-name">Inserimento Porte</h3>
+            <p class="feature-desc">Inserisce porte in pianta con arco di apertura dinamico, dimensioni adattate al vano rilevato e gestione automatica dei layer dedicati.</p>
+          </article>
+
+          <!-- Blocchi Controllo -->
+          <article class="feature-card reveal reveal-delay-3" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPB</span>
+            <h3 class="feature-name">Blocchi di Controllo</h3>
+            <p class="feature-desc">Inserisce blocchi di riferimento e controllo per la verifica della coerenza geometrica del disegno rispetto alla nuvola di punti.</p>
+          </article>
+
+          <!-- Eliminazione Viste -->
+          <article class="feature-card reveal" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6l-1 14H6L5 6"/>
+                <path d="M10 11v6M14 11v6"/>
+                <path d="M9 6V4h6v2"/>
+              </svg>
+            </div>
+            <span class="feature-badge">DELV</span>
+            <h3 class="feature-name">Eliminazione Viste</h3>
+            <p class="feature-desc">Rimuove una vista e tutti i layer associati mantenendo il disegno pulito e ordinato, senza layer orfani residui.</p>
+          </article>
+
+          <!-- Visibilità Nuvola -->
+          <article class="feature-card reveal reveal-delay-1" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <span class="feature-badge">B</span>
+            <h3 class="feature-name">Visibilità Nuvola</h3>
+            <p class="feature-desc">Accende e spegne la nuvola di punti istantaneamente con un tasto. Indispensabile per alternare rapidamente tra nuvola e disegno durante la restituzione.</p>
+          </article>
+
+          <!-- Esportazione -->
+          <article class="feature-card reveal reveal-delay-2" role="listitem">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d9cf0" stroke-width="1.8">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <span class="feature-badge">CPE</span>
+            <h3 class="feature-name">Esportazione Pulita</h3>
+            <p class="feature-desc">Esporta le viste in file DWG separati e pronti alla consegna, con layer system ordinato e senza elementi residui della sessione di lavoro.</p>
+          </article>
+
+        </div><!-- /features-grid -->
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════════════════════════════════════════════════════════
+         COME FUNZIONA
+         ════════════════════════════════════════════════════════ -->
+    <section class="section" id="come-funziona">
+      <div class="section-inner">
+        <p class="section-label reveal">Come Funziona</p>
+        <h2 class="section-title reveal">Il workflow in <span>3 passi.</span></h2>
+        <p class="section-sub reveal">
+          DraftCP si integra nel tuo ambiente AutoCAD senza stravolgere il flusso di lavoro.
+          In tre fasi, dalla nuvola grezza al disegno pronto alla consegna.
+        </p>
+
+        <div class="workflow-steps" aria-label="Fasi del workflow">
+
+          <div class="workflow-step reveal">
+            <div class="workflow-num" aria-hidden="true">1</div>
+            <div>
+              <h3 class="workflow-step-title">Importa e Orienta</h3>
+              <p class="workflow-step-desc">
+                Importa la nuvola di punti in AutoCAD e usa <strong>CPS</strong> per orientare il sistema di riferimento del progetto. DraftCP si adatta al tuo rilievo, non il contrario.
+              </p>
+            </div>
+          </div>
+
+          <div class="workflow-step reveal reveal-delay-2">
+            <div class="workflow-num" aria-hidden="true">2</div>
+            <div>
+              <h3 class="workflow-step-title">Genera le Viste</h3>
+              <p class="workflow-step-desc">
+                Con <strong>CPV</strong> crei le sezioni orizzontali (piante) in pochi clic. I layer vengono creati e organizzati automaticamente. Naviga tra i piani con <strong>AC</strong> in tempo reale.
+              </p>
+            </div>
+          </div>
+
+          <div class="workflow-step reveal reveal-delay-4">
+            <div class="workflow-num" aria-hidden="true">3</div>
+            <div>
+              <h3 class="workflow-step-title">Disegna ed Esporta</h3>
+              <p class="workflow-step-desc">
+                Tracci muri, porte e finestre con precisione geometrica garantita. Quando il disegno è pronto, <strong>CPE</strong> esporta file DWG puliti e pronti alla consegna.
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /workflow-steps -->
+
+        <!-- Media: Video e Immagini Demo -->
+        <div class="workflow-media">
+
+          <figure class="workflow-media-item reveal">
+            <video
+              src="Manual/Sezione_04_CpViste_OCG/cpv_demo.mp4"
+              autoplay muted loop playsinline
+              aria-label="Demo del comando CPV: creazione e gestione delle viste su nuvola di punti">
+              Il tuo browser non supporta i video HTML5.
+            </video>
+            <figcaption class="media-caption">
+              📐 Creazione e gestione viste con CPV — la nuvola di punti si organizza in piani autonomi
+            </figcaption>
+          </figure>
+
+          <figure class="workflow-media-item reveal reveal-delay-2">
+            <video
+              src="Manual/Sezione_06_CpMuri_OCG/cpm_demo.mp4"
+              autoplay muted loop playsinline
+              aria-label="Demo del comando CPM: tracciamento muri con controllo geometrico automatico">
+              Il tuo browser non supporta i video HTML5.
+            </video>
+            <figcaption class="media-caption">
+              🧱 Tracciamento muri con CPM — parallelismo e ortogonalità verificati automaticamente
+            </figcaption>
+          </figure>
+
+        </div><!-- /workflow-media -->
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════════════════════════════════════════════════════════
+         DOWNLOAD & LICENZA
+         ════════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="download">
+      <div class="section-inner">
+        <p class="section-label reveal">Download</p>
+        <h2 class="section-title reveal">Pronto a <span>risparmiare tempo?</span></h2>
+
+        <div class="download-box reveal">
+          <div class="download-info">
+            <span class="download-version-tag" style="color:var(--accent-orange);background:rgba(240,160,61,.1);border-color:rgba(240,160,61,.25);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="12"/></svg>
+              Versione 1.0.2 — In preparazione
+            </span>
+            <h3 class="download-title">DraftCP<br>per AutoCAD</h3>
+            <p class="download-desc">
+              Il download sarà disponibile a breve. Il plug-in è compatibile con AutoCAD 2018
+              e versioni successive su Windows 10 e 11.
+            </p>
+            <div class="download-license-note">
+              <strong>🔔 Vuoi essere tra i primi a provarlo?</strong><br>
+              Invia una richiesta di <strong>accesso anticipato</strong> o di
+              <strong>licenza di prova</strong> a
+              <a href="mailto:OCG.Software26@outlook.com">OCG.Software26@outlook.com</a>.
+              Riceverai risposta entro <strong>24 ore</strong> non appena il download sarà attivo.
+              La procedura di attivazione avviene direttamente all'interno dell'applicazione.
+            </div>
+          </div>
+
+          <div class="download-actions">
+            <span class="btn-download btn-download-soon" aria-disabled="true" id="main-download-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0110 0v4"/>
+              </svg>
+              Disponibile a Breve
+            </span>
+            <a href="Manual/index.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-guide"
+               id="main-guide-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+              </svg>
+              Guida Utente Online
+            </a>
+            <a href="mailto:OCG.Software26@outlook.com" class="btn-guide" style="border-color:rgba(240,160,61,.3);color:var(--accent-orange);" id="early-access-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Richiedi Accesso Anticipato
+            </a>
+            <p class="dl-meta">Download non ancora disponibile<br>Contattaci per accesso anticipato</p>
+          </div>
+        </div>
+
+        <!-- Requisiti di Sistema -->
+        <div class="requirements-grid" role="list" aria-label="Requisiti di sistema">
+          <div class="req-card reveal" role="listitem">
+            <span class="req-icon" aria-hidden="true">🖥️</span>
+            <span class="req-label">Piattaforma</span>
+            <span class="req-value">Windows 10 / 11</span>
+          </div>
+          <div class="req-card reveal reveal-delay-1" role="listitem">
+            <span class="req-icon" aria-hidden="true">✏️</span>
+            <span class="req-label">Software CAD</span>
+            <span class="req-value">AutoCAD 2018+</span>
+          </div>
+          <div class="req-card reveal reveal-delay-2" role="listitem">
+            <span class="req-icon" aria-hidden="true">☁️</span>
+            <span class="req-label">Compatibilità</span>
+            <span class="req-value">RCP / RCS / Lgs / Lgsx</span>
+          </div>
+          <div class="req-card reveal reveal-delay-3" role="listitem">
+            <span class="req-icon" aria-hidden="true">🔑</span>
+            <span class="req-label">Licenza</span>
+            <span class="req-value">Prova / Durata</span>
+          </div>
+          <div class="req-card reveal reveal-delay-4" role="listitem">
+            <span class="req-icon" aria-hidden="true">⚡</span>
+            <span class="req-label">Attivazione</span>
+            <span class="req-value">Entro 24 ore</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ════════════════════════════════════════════════════════
+         CHI SONO / ABOUT
+         ════════════════════════════════════════════════════════ -->
+    <section class="section" id="chi-sono">
+      <div class="section-inner">
+        <p class="section-label reveal">Chi Sono</p>
+        <h2 class="section-title reveal">Un geometra che ha <span>smesso di aspettare.</span></h2>
+
+        <div class="about-grid">
+
+          <div class="about-text-col reveal">
+            <div class="about-avatar" aria-hidden="true">👷</div>
+            <div class="about-name">O.C.G.</div>
+            <div class="about-role">Geometra &amp; Sviluppatore AutoLISP</div>
+
+            <blockquote class="about-quote">
+              "Cercavo uno strumento che non sostituisse il mio lavoro, ma che lo rendesse più rapido,
+              più preciso e meno ripetitivo. Non trovandolo, l'ho costruito."
+            </blockquote>
+
+            <p class="about-text">
+              Mi sono avvicinato alle nuvole di punti nel 2019 e da allora ho costantemente ricercato
+              metodi, strategie e soluzioni per un disegno corretto, ordinato e coerente — ma soprattutto
+              per semplificare e automatizzare le operazioni necessarie.
+            </p>
+            <p class="about-text">
+              Ho studiato AutoLISP, uno dei linguaggi di programmazione nativi per l'ambiente CAD, e
+              ho sviluppato i primi comandi mettendoli a disposizione dei colleghi dello studio.
+              Con gli anni ho visto crescere l'adozione dei laser scanner e la conseguente necessità
+              di consegnare disegni in tempi sempre più brevi. DraftCP è la risposta a questa esigenza.
+            </p>
+
+            <a href="mailto:OCG.Software26@outlook.com" class="about-contact" id="about-contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              OCG.Software26@outlook.com
+            </a>
+          </div>
+
+          <div class="about-stats reveal reveal-delay-2">
+            <div class="stat-card">
+              <div class="stat-num">2019</div>
+              <div class="stat-label">Anno di inizio con le nuvole di punti</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">7+</div>
+              <div class="stat-label">Anni di sviluppo e iterazione sul campo</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">11</div>
+              <div class="stat-label">Comandi integrati nel plugin</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">24h</div>
+              <div class="stat-label">Attivazione licenza garantita</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div class="footer-brand-wrap">
+          <div class="footer-brand">
+            <img src="Manual/Sezione_00_Home_page/logo_draftcp.png"
+                 alt="DraftCP Logo"
+                 class="footer-logo"
+                 loading="lazy">
+            <span class="footer-brand-name">DraftCP</span>
+          </div>
+          <p class="footer-tagline">
+            Il plug-in AutoCAD per la restituzione 2D da nuvole di punti.
+            Sviluppato da un geometra per i professionisti del settore.
+          </p>
+        </div>
+
+        <div class="footer-links">
+
+          <div class="footer-links-col">
+            <h4>Prodotto</h4>
+            <a href="#funzionalita">Funzionalità</a>
+            <a href="#come-funziona">Come Funziona</a>
+            <a href="#download">Download</a>
+            <a href="#chi-sono">Chi Sono</a>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Documentazione</h4>
+            <a href="Manual/index.html" target="_blank" rel="noopener noreferrer">Guida Utente</a>
+            <a href="Manual/eula.html" target="_blank" rel="noopener noreferrer">Licenza d'uso (EULA)</a>
+            <a href="Manual/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Contatti</h4>
+            <a href="mailto:OCG.Software26@outlook.com">OCG.Software26@outlook.com</a>
+            <a href="https://github.com/OCG-Software26/DraftCP" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+
+        </div>
+      </div><!-- /footer-top -->
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 O.C.G. &nbsp;·&nbsp; draftcp.it &nbsp;·&nbsp; Tutti i diritti riservati.
+        </p>
+        <nav class="footer-legal" aria-label="Link legali">
+          <a href="Manual/eula.html" target="_blank" rel="noopener noreferrer">EULA</a>
+          <a href="Manual/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="mailto:OCG.Software26@outlook.com">Contatti</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

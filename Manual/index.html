@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Manuale utente ufficiale di DraftCP, il plugin AutoCAD per la restituzione grafica di rilievi da nuvola di punti.">
+  <title>DraftCP — Manuale Utente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="site-header">
+    <button class="hamburger" id="menuBtn" aria-label="Menu"
+      aria-expanded="false"><span></span><span></span><span></span></button>
+    <img src="Sezione_00_Home_page/logo_draftcp.png" alt="DraftCP Logo" class="header-logo">
+    <span class="header-title">Manuale Utente</span>
+    <span class="header-version">v1.0 — Luglio 2026</span>
+    <nav class="header-links">
+      <a href="eula.html">Licenza d'uso</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════ LAYOUT ═══════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ──────────────────── SIDEBAR ──────────────────── -->
+    <aside class="sidebar">
+      <nav>
+        <div class="sidebar-section-label">Guida Rapida</div>
+        <ul>
+          <li><a href="#home"><span class="nav-icon">🏠</span> Home<span class="nav-badge">START</span></a></li>
+          <li><a href="#sec1"><span class="nav-icon">📖</span> 1. Introduzione</a></li>
+        </ul>
+        <div class="sidebar-section-label">Comandi Principali</div>
+        <ul>
+          <li><a href="#sec2"><span class="nav-icon">🎛️</span> 2. Dashboard<span class="nav-badge">CPD</span></a></li>
+          <li><a href="#sec3"><span class="nav-icon">🧭</span> 3. Orientamento<span class="nav-badge">CPS</span></a>
+          </li>
+          <li><a href="#sec4"><span class="nav-icon">📐</span> 4. Creazione Viste<span class="nav-badge">CPV</span></a>
+          </li>
+          <li><a href="#sec5"><span class="nav-icon">🔀</span> 5. Navigazione<span class="nav-badge">AC</span></a></li>
+          <li><a href="#sec6"><span class="nav-icon">🧱</span> 6. Tracciamento Muri<span
+                class="nav-badge">CPM</span></a></li>
+          <li><a href="#sec7"><span class="nav-icon">🪟</span> 7. Finestre<span class="nav-badge">CPF</span></a></li>
+          <li><a href="#sec8"><span class="nav-icon">🚪</span> 8. Porte<span class="nav-badge">CPP</span></a></li>
+          <li><a href="#sec9"><span class="nav-icon">📦</span> 9. Blocchi Controllo<span
+                class="nav-badge">CPB</span></a></li>
+          <li><a href="#sec10"><span class="nav-icon">🗑️</span> 10. Elim. Viste<span class="nav-badge">DELV</span></a>
+          </li>
+          <li><a href="#sec11"><span class="nav-icon">☁️</span> 11. Visib. Nuvola<span class="nav-badge">B</span></a>
+          </li>
+          <li><a href="#sec12"><span class="nav-icon">📤</span> 12. Esportazione<span class="nav-badge">CPE</span></a>
+          </li>
+        </ul>
+        <div class="sidebar-section-label">Supporto</div>
+        <ul>
+          <li><a href="#sec13"><span class="nav-icon">❓</span> 13. FAQ &amp; Problemi</a></li>
+          <li><a href="#sec14"><span class="nav-icon">📋</span> 14. Riferimenti</a></li>
+          <li><a href="eula.html"><span class="nav-icon">📜</span> Licenza d'uso (EULA)</a></li>
+          <li><a href="privacy.html"><span class="nav-icon">🔒</span> Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ──────────────────── MAIN CONTENT ──────────────────── -->
+    <main class="main-content">
+
+      <!-- ════════════════ SEZIONE 0 — HOME ════════════════ -->
+      <section class="doc-section" id="home">
+        <div class="hero">
+          <img src="Sezione_00_Home_page/logo_draftcp.png" alt="DraftCP — CAD plugin for drawing" class="hero-logo">
+          <h1 class="hero-title">DraftCP — Manuale Utente</h1>
+          <p class="hero-sub">Il plugin AutoCAD per la restituzione grafica di rilievi da nuvola di punti</p>
+          <span class="hero-version">versione 1.0 &nbsp;·&nbsp; sviluppato da O.C.G. &nbsp;·&nbsp; Luglio 2026</span>
+          <br><br>
+          <a href="#sec1" class="hero-cta">Inizia da qui →</a>
+          <a href="#sec2" class="hero-cta-sec">Vai ai comandi</a>
+        </div>
+        <div class="media-block">
+          <img src="Sezione_00_Home_page/Finetra_dialogo_dashboard.png"
+            alt="La Dashboard di DraftCP con l'elenco completo dei comandi">
+          <p class="media-caption">Il pannello di controllo principale di DraftCP con tutte le viste di un progetto
+            reale</p>
+        </div>
+        <h2>Requisiti di sistema</h2>
+        <div class="requirements-grid">
+          <div class="req-card">
+            <div class="req-icon">🖥️</div>
+            <span class="req-label">Piattaforma</span>
+            <span class="req-value">Windows 10 / 11</span>
+          </div>
+          <div class="req-card">
+            <div class="req-icon">✏️</div>
+            <span class="req-label">Software CAD</span>
+            <span class="req-value">AutoCAD 2018+</span>
+          </div>
+          <div class="req-card">
+            <div class="req-icon">🌐</div>
+            <span class="req-label">Connessione</span>
+            <span class="req-value">Internet (per licenza)</span>
+          </div>
+        </div>
+        <div class="callout note">
+          <span class="callout-icon">📌</span>
+          <div class="callout-content">
+            <strong>Compatibilità</strong>
+            DraftCP v1.0 è certificato esclusivamente per <strong>AutoCAD su Windows</strong>.
+            La compatibilità con altri software CAD (ZWCAD, BricsCAD, ecc.) non è garantita.
+          </div>
+        </div>
+      </section>
+      <!-- ════════════════ SEZIONE 1 — INTRODUZIONE ════════════════ -->
+      <section class="doc-section" id="sec1">
+        <span class="section-tag">Sezione 1</span>
+        <h1 class="section-title">Introduzione a DraftCP</h1>
+        <p class="section-lead">
+          DraftCP è un plugin per AutoCAD che automatizza e guida l'operatore in tutte le fasi della
+          restituzione grafica di un rilievo da nuvola di punti, dalla definizione dell'orientamento
+          del progetto fino all'esportazione del file DWG finale.
+        </p>
+        <h2>Cos'è DraftCP e a cosa serve</h2>
+        <p>
+          Il rilievo da nuvola di punti è oggi la tecnica di acquisizione geometrica più diffusa
+          nel settore dell'architettura e dell'ingegneria. Una nuvola di punti però non è un disegno:
+          per ottenere elaborati tecnici consegnabili (piante, sezioni, prospetti) occorre un lungo
+          lavoro manuale di restituzione grafica in AutoCAD.
+        </p>
+        <p>
+          DraftCP nasce per eliminare le operazioni più ripetitive e soggette ad errore di questo
+          processo: definire l'orientamento del sistema di riferimento, creare e gestire i layer per
+          ogni vista, tracciare i muri con la correzione geometrica automatica, inserire porte e
+          finestre, e infine impaginare ed esportare tutti gli elaborati in un unico file DWG pulito.
+        </p>
+        <h2>A chi è rivolta</h2>
+        <ul>
+          <li><strong>Geometri e tecnici</strong> che eseguono rilievi architettonici di edifici esistenti</li>
+          <li><strong>Architetti e ingegneri</strong> che ricevono nuvole di punti e devono produrre elaborati tecnici
+          </li>
+          <li><strong>Disegnatori CAD</strong> che lavorano quotidianamente con AutoCAD su progetti di rilievo</li>
+          <li>Studi professionali con nuvole di punti da Leica CloudWorx, Autodesk ReCap o software analoghi</li>
+        </ul>
+        <h2>Flusso di lavoro</h2>
+        <div class="workflow">
+          <div class="workflow-step">
+            <div class="step-num">1</div>
+            <div class="step-content"><strong>Importa la nuvola di punti in AutoCAD</strong><span>Operazione preliminare
+                standard, esterna a DraftCP.</span></div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num">2</div>
+            <div class="step-content"><strong>Orientamento <span class="cmd">CPS</span></strong><span>Allinea il sistema
+                di riferimento (UCS) con la geometria principale dell'edificio.</span></div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num">3</div>
+            <div class="step-content"><strong>Creazione Viste <span class="cmd">CPV</span></strong><span>Genera
+                automaticamente piante, sezioni e prospetti con i relativi layer e filtri.</span></div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num">4</div>
+            <div class="step-content"><strong>Tracciamento Muri <span class="cmd">CPM</span></strong><span>Disegna i
+                muri a due linee con correzione geometrica automatica e chiusura dei giunti.</span></div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num">5</div>
+            <div class="step-content"><strong>Porte e Finestre <span class="cmd">CPP</span> · <span
+                  class="cmd">CPF</span></strong><span>Posiziona serramenti con calcolo automatico dello spessore del
+                muro.</span></div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num">6</div>
+            <div class="step-content"><strong>Blocchi di Controllo <span class="cmd">CPB</span></strong><span>Copia
+                elementi tra viste diverse per verificare l'allineamento grafico.</span></div>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num">7</div>
+            <div class="step-content"><strong>Esportazione Finale <span class="cmd">CPE</span></strong><span>Impagina e
+                esporta tutti gli elaborati in un nuovo DWG pulito, pronto alla consegna.</span></div>
+          </div>
+        </div>
+        <h2>Installazione</h2>
+        <p>L'installazione di <strong>DraftCP</strong> è completamente automatizzata tramite il file di installazione
+          fornito (<code>.exe</code>).</p>
+        <div class="callout note">
+          <span class="callout-icon">🚀</span>
+          <div class="callout-content">
+            <strong>Procedura di installazione ed avvio:</strong>
+            <ol style="margin-top:8px; padding-left:20px; line-height: 1.6;">
+              <li>Chiudere AutoCAD se è attualmente in esecuzione.</li>
+              <li>Avviare l'eseguibile <code>DraftCP_Setup_v1.0.0.exe</code> e seguire le istruzioni guidate
+                dell'installer.</li>
+              <li>Avviare AutoCAD: l'applicazione, la barra dei comandi personalizzata (Ribbon) e tutti i percorsi di
+                supporto saranno configurati e caricati in modo del tutto automatico.</li>
+            </ol>
+            Non è necessario caricare manualmente alcun file tramite il comando <code>APPLOAD</code>. Il plug-in è
+            pronto all'uso fin da subito.
+          </div>
+        </div>
+        <h2>Attivazione della licenza</h2>
+        <p>Al primo avvio, l'applicazione calcola il <strong>Codice Macchina</strong> del PC: un identificativo univoco
+          e irreversibile derivato dall'UUID della scheda madre. Se il software non è attivato, appare la finestra di
+          attivazione:</p>
+        <div class="media-sm">
+          <img src="Sezione_01_Introduzione/finestra_attivazione.png" alt="Finestra di attivazione licenza DraftCP">
+          <p class="media-caption">La finestra di attivazione con il Codice Macchina univoco del PC</p>
+        </div>
+        <h3>Come attivare la licenza</h3>
+        <ol class="steps-list">
+          <li>Annotare il <strong>Codice Macchina</strong> visualizzato nella finestra.</li>
+          <li>Cliccare <strong>"Invia Richiesta Licenza via Email"</strong>: si apre il client di posta precompilato con
+            il Codice Macchina già incluso nel testo.</li>
+          <li>Inviare l'email allo sviluppatore. L'attivazione verrà effettuata entro breve.</li>
+          <li>Dopo l'attivazione, <strong>riavviare AutoCAD</strong> e richiamare nuovamente il comando.</li>
+        </ol>
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Verifica rapida</strong>
+            Cliccare <strong>"Verifica licenza online"</strong> per controllare immediatamente se la licenza è già stata
+            attivata, senza riavviare AutoCAD.
+          </div>
+        </div>
+        <h3>Lo stato della licenza nella Dashboard</h3>
+        <div class="media-sm">
+          <img src="Sezione_01_Introduzione/Riquadro_licenza_sulla_Dashboard.png"
+            alt="Riquadro stato licenza nella Dashboard">
+          <p class="media-caption">Il riquadro "Gestione licenza" con lo stato attuale della licenza</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Colore</th>
+              <th>Stato</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🟢 Verde</td>
+              <td>Licenza Attiva</td>
+              <td>Licenza verificata e valida.</td>
+            </tr>
+            <tr>
+              <td>🟡 Giallo</td>
+              <td>Grazia Offline</td>
+              <td>Nessuna connessione da meno di 5 giorni. L'app funziona normalmente.</td>
+            </tr>
+            <tr>
+              <td>🔴 Rosso</td>
+              <td>Non Valida</td>
+              <td>Licenza assente, scaduta o non registrata.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Video tutorial: attivazione licenza</h3>
+        <div class="media-block">
+          <video controls preload="metadata">
+            <source src="Sezione_01_Introduzione/Richiesta_attivazione_licenza.mp4" type="video/mp4">
+            Il tuo browser non supporta la riproduzione video.
+          </video>
+          <p class="media-caption">Tutorial: come richiedere e attivare la licenza di DraftCP</p>
+        </div>
+        <div class="callout warning">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-content">
+            <strong>Cambio hardware</strong>
+            Il Codice Macchina è legato alla scheda madre. In caso di sostituzione, occorre richiedere una nuova
+            attivazione.
+          </div>
+        </div>
+
+
+        <h2>La scheda DraftCP nel Ribbon di AutoCAD</h2>
+        <p>
+          Dopo l'installazione del pacchetto, nella barra degli strumenti superiore di AutoCAD (Ribbon) compare
+          la scheda <strong>DraftCP</strong>. Da qui &egrave; possibile
+          lanciare tutti i comandi del plugin con un semplice click sull'icona corrispondente.
+        </p>
+        <div class="media-block">
+          <img src="Sezione_01_Introduzione/Scheda_DraftCP_ribbon.png"
+            alt="Scheda DraftCP nel Ribbon di AutoCAD con i pulsanti di tutti i comandi"
+            style="max-width:100%; height:auto;">
+          <p class="media-caption">La scheda <strong>DraftCP</strong> nel Ribbon di AutoCAD.</p>
+        </div>
+        <h3>I comandi disponibili</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:16px; margin:16px 0;">
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPD_256x256.png" alt="Icona CPD" width="40"
+              height="40"><span><strong>CPD</strong> &mdash; Dashboard</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPS_256x256.png" alt="Icona CPS" width="40"
+              height="40"><span><strong>CPS</strong> &mdash; Orientamento Progetto</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPV_256x256.png" alt="Icona CPV" width="40"
+              height="40"><span><strong>CPV</strong> &mdash; Crea Viste</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPB_256x256.png" alt="Icona CPB" width="40"
+              height="40"><span><strong>CPB</strong> &mdash; Copia Blocchi Vista</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/DELV_256x256.png" alt="Icona DELV" width="40"
+              height="40"><span><strong>DELV</strong> &mdash; Elimina Vista</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPM_256x256.png" alt="Icona CPM" width="40"
+              height="40"><span><strong>CPM</strong> &mdash; Tracciamento Muri</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPF_256x256.png" alt="Icona CPF" width="40"
+              height="40"><span><strong>CPF</strong> &mdash; Inserimento Finestre</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPP_256x256.png" alt="Icona CPP" width="40"
+              height="40"><span><strong>CPP</strong> &mdash; Inserimento Porte</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/CPE_256x256.png" alt="Icona CPE" width="40"
+              height="40"><span><strong>CPE</strong> &mdash; Esportazione Viste</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/AC_256x256.png" alt="Icona AC" width="40"
+              height="40"><span><strong>AC</strong> &mdash; Trasla Vista Corrente</span></div>
+          <div style="display:flex; align-items:center; gap:10px; min-width:220px;"><img
+              src="Sezione_01_Introduzione/B_256x256.png" alt="Icona B" width="40" height="40"><span><strong>B</strong>
+              &mdash; Visibilit&agrave; Nuvola di Punti</span></div>
+        </div>
+      </section>
+      <!-- ════════════════ SEZIONE 2 — DASHBOARD ════════════════ -->
+      <section class="doc-section" id="sec2">
+        <span class="section-tag">Sezione 2</span>
+        <h1 class="section-title">La Dashboard <span class="cmd">CPD</span></h1>
+        <p class="section-lead">
+          La Dashboard è il pannello di controllo centrale di DraftCP. Da qui è possibile accedere a
+          tutti i comandi dell'applicazione, monitorare lo stato delle viste e gestire la licenza
+          senza mai abbandonare l'interfaccia grafica.
+        </p>
+
+        <h2>Come aprire la Dashboard</h2>
+        <p>Digitare <span class="cmd">CPD</span> nella riga di comando di AutoCAD e premere <kbd>Invio</kbd>. La
+          Dashboard si apre sopra la finestra del CAD e rimane in primo piano.</p>
+
+        <h2>Panoramica del pannello</h2>
+        <div class="media-block">
+          <img src="Sezione_02_Dashboard/Finetra_dialogo_dashboard.png"
+            alt="Il pannello di controllo principale DraftCP con tutte le funzioni">
+          <p class="media-caption">La Dashboard con un progetto reale caricato: 11 viste attive, licenza verde e tutti i
+            comandi disponibili</p>
+        </div>
+
+        <p>La Dashboard è organizzata su due colonne:</p>
+        <ul>
+          <li><strong>Colonna sinistra</strong>: i pulsanti dei comandi, raggruppati per area funzionale</li>
+          <li><strong>Colonna destra</strong>: le informazioni di stato (viste, supporto, licenza)</li>
+        </ul>
+
+        <h2>Colonna sinistra — Comandi</h2>
+
+        <h3>Gestione disegno e Viste</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Pulsante</th>
+              <th>Alias</th>
+              <th>Funzione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Orientamento</strong></td>
+              <td><span class="cmd">CPS</span></td>
+              <td>Imposta l'orientamento base del disegno e prepara l'ambiente di lavoro</td>
+            </tr>
+            <tr>
+              <td><strong>Generazione Viste</strong></td>
+              <td><span class="cmd">CPV</span></td>
+              <td>Crea piante, sezioni e prospetti con layer e filtri associati</td>
+            </tr>
+            <tr>
+              <td><strong>Blocchi di Controllo</strong></td>
+              <td><span class="cmd">CPB</span></td>
+              <td>Copia una vista su un'altra come blocco di riferimento grafico</td>
+            </tr>
+            <tr>
+              <td><strong>Attiva la vista</strong></td>
+              <td><span class="cmd">AC</span></td>
+              <td>Rende corrente una vista e attiva il suo filtro layer</td>
+            </tr>
+            <tr>
+              <td><strong>Eliminazione Viste</strong></td>
+              <td><span class="cmd">DELV</span></td>
+              <td>Rimuove in modo sicuro una vista e tutti i suoi layer</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Strumenti per il disegno</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Pulsante</th>
+              <th>Alias</th>
+              <th>Funzione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tracciamento Muri</strong></td>
+              <td><span class="cmd">CPM</span></td>
+              <td>Disegna muri a due linee con correzione geometrica automatica</td>
+            </tr>
+            <tr>
+              <td><strong>Inserimento Porte</strong></td>
+              <td><span class="cmd">CPP</span></td>
+              <td>Posiziona porte e varchi nei muri tracciati</td>
+            </tr>
+            <tr>
+              <td><strong>Inserimento Finestre</strong></td>
+              <td><span class="cmd">CPF</span></td>
+              <td>Posiziona finestre nei muri tracciati con profilo davanzale</td>
+            </tr>
+            <tr>
+              <td><strong>Visibilità Nuvola</strong></td>
+              <td><span class="cmd">B</span></td>
+              <td>Accende o spegne rapidamente la nuvola di punti</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Esportazione</h3>
+        <p>Il pulsante <strong>ESPORTAZIONE FINALE</strong> (<span class="cmd">CPE</span>) in fondo alla colonna
+          sinistra estrae tutte le viste dal disegno e le impagina in un nuovo DWG pronto alla consegna.</p>
+
+        <h2>Colonna destra — Stato e Supporto</h2>
+
+        <h3>Box "Stato Viste"</h3>
+        <p>Elenca tutte le viste presenti nel disegno con un indicatore di stato accanto a ciascuna:</p>
+        <div class="media-sm">
+          <img src="Sezione_02_Dashboard/dashboard_stato_viste.png" alt="Lista stato viste con indicatori OK e VUOTA">
+          <p class="media-caption">L'elenco delle viste: [ OK ] per quelle con geometria, [ VUOTA ] per quelle ancora
+            vuote
+          </p>
+        </div>
+        <ul>
+          <li><strong>[ OK ]</strong> — la vista contiene almeno un oggetto grafico nei suoi layer di disegno</li>
+          <li><strong>[ VUOTA ]</strong> — la vista esiste ma non contiene ancora disegno</li>
+        </ul>
+        <p>Questo permette di verificare a colpo d'occhio lo stato di avanzamento del rilievo senza navigare tra le
+          viste una ad una.</p>
+
+        <h3>Box "Supporto"</h3>
+        <p>Quattro pulsanti di accesso diretto alla documentazione:</p>
+        <ul>
+          <li><strong>Manuale</strong> — apre questo documento nel browser predefinito</li>
+          <li><strong>Segnalazione Bug</strong> — apre il client di posta con email precompilata allo sviluppatore, con
+            il Codice Macchina già incluso nel testo</li>
+          <li><strong>Licenza d'uso</strong> — apre il contratto EULA nel browser</li>
+          <li><strong>Privacy Policy</strong> — apre l'informativa sulla privacy nel browser</li>
+        </ul>
+
+        <h3>Box "Gestione Licenza"</h3>
+        <p>Mostra sempre lo stato aggiornato della licenza con un indicatore colorato:</p>
+        <div class="media-row">
+          <div class="media-sm" style="margin:0;">
+            <img src="Sezione_02_Dashboard/dashboard_licenza_verde.png" alt="Licenza attiva — indicatore verde">
+            <p class="media-caption">Licenza Attiva — tutto OK</p>
+          </div>
+          <div class="media-sm" style="margin:0;">
+            <img src="Sezione_02_Dashboard/dashboard_licenza_giallo.png"
+              alt="Licenza in grazia offline — indicatore giallo">
+            <p class="media-caption">Grazia Offline — funziona ancora</p>
+          </div>
+        </div>
+        <p>Il pulsante <strong>"Aggiorna stato licenza"</strong> esegue immediatamente una verifica online, aggiornando
+          l'indicatore senza necessità di riavviare AutoCAD.</p>
+
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>La Dashboard resta sempre disponibile</strong>
+            Chiudere la Dashboard non interrompe né annulla nessun comando già avviato.
+            Puoi riaprirla in qualsiasi momento digitando <span class="cmd">CPD</span>.
+          </div>
+        </div>
+      </section>
+      <!-- ════════════════ SEZIONE 3 — CPS ORIENTAMENTO ════════════════ -->
+      <section class="doc-section" id="sec3">
+        <span class="section-tag">Sezione 3</span>
+        <h1 class="section-title">Orientamento del Progetto <span class="cmd">CPS</span></h1>
+        <p class="section-lead">
+          Prima di iniziare il disegno, è fondamentale allineare il sistema di riferimento di AutoCAD
+          con la geometria principale dell'edificio. Questo comando crea l'UCS <code>01.Pianta</code>
+          su cui si basano tutti i comandi successivi.
+        </p>
+
+        <h2>A cosa serve</h2>
+        <p>
+          Il sistema UCS (User Coordinate System) di AutoCAD definisce l'orientamento degli assi X e Y
+          nel disegno. Per un rilievo architettonico, è essenziale che l'asse X sia parallelo ad
+          un elemento dell'edificio (tipicamente la facciata più lunga o quella esposta a Sud).
+        </p>
+        <p>
+          Il comando <span class="cmd">CPS</span> imposta questo allineamento, crea l'UCS
+          <code>01.Pianta</code> e lo salva nel disegno in modo permanente. Tutti i comandi di
+          DraftCP — dalla creazione delle viste al tracciamento dei muri — lavorano
+          con riferimento a questo sistema di assi.
+        </p>
+
+        <div class="callout danger">
+          <span class="callout-icon">🚨</span>
+          <div class="callout-content">
+            <strong>Primo comando da eseguire</strong>
+            <span class="cmd">CPS</span> deve essere il <strong>primo comando</strong> da lanciare,
+            subito dopo aver importato la nuvola di punti. Se si crea l'orientamento dopo aver già
+            creato delle viste, il sistema blocca il comando per proteggere il disegno. Per
+            reimpostare l'orientamento è necessario prima eliminare tutte le viste con
+            <span class="cmd">DELV</span>.
+          </div>
+        </div>
+
+        <h2>Come avviare il comando</h2>
+        <p>Digitare <span class="cmd">CPS</span> nella riga di comando oppure cliccare il pulsante
+          <strong>Orientamento</strong> nella Dashboard.
+        </p>
+        <p>All'avvio, il sistema controlla automaticamente se un orientamento è già presente nel disegno e chiede
+          conferma prima di procedere con una sovrascrittura.</p>
+
+        <h2>I due metodi di orientamento</h2>
+
+        <h3>Metodo 1 — Due Punti</h3>
+        <p>
+          Questo è il metodo più comune. Si selezionano <strong>due punti</strong> sulla nuvola di
+          punti lungo il bordo di un muro di riferimento (es. la facciata principale). La direzione
+          da punto 1 a punto 2 definisce l'asse X del progetto.
+        </p>
+        <div class="media-block">
+          <img src="Sezione_03_CpSetup_OCG/cps_metodo_2punti.png"
+            alt="Selezione di due punti sul muro principale della nuvola di punti">
+          <p class="media-caption">Il metodo a 2 punti: i due quadrati verdi indicano i punti cliccati sul bordo del
+            muro principale. La linea tratteggiata mostra la direzione dell'asse X risultante.</p>
+        </div>
+        <p>La riga di comando guida l'operatore passo per passo:</p>
+        <ol class="steps-list">
+          <li>Alla richiesta del metodo, premere <kbd>Invio</kbd> per accettare il default <strong>[2punti]</strong>,
+            oppure digitare <code>L</code> per scegliere il metodo Linea.</li>
+          <li>Cliccare il <strong>primo punto</strong> sul bordo del muro di riferimento (es. l'angolo sinistro della
+            facciata).</li>
+          <li>Cliccare il <strong>secondo punto</strong> sullo stesso muro (es. l'angolo destro). La distanza non
+            importa, conta solo la direzione.</li>
+          <li>Cliccare il <strong>punto di Origine</strong> del sistema di coordinate (tipicamente un angolo interno o
+            esterno dell'edificio). Questo diventa la coordinata (0,0) del progetto.</li>
+          <li>Digitare la <strong>quota Z</strong> del piano di rilievo (es. <code>0</code> per il piano terra, oppure
+            la quota altimetrica reale se si lavora in 3D).</li>
+        </ol>
+
+        <h3>Metodo 2 — Linea esistente</h3>
+        <p>
+          Se nel disegno è già presente una linea tracciata sull'asse di un muro (ad es. un segmento
+          di costruzione disegnato manualmente), si può usarla direttamente come riferimento.
+          Questo metodo è utile per riprodurre con esattezza un orientamento già impostato in
+          precedenza.
+        </p>
+        <div class="media-block">
+          <img src="Sezione_03_CpSetup_OCG/cps_metodo_linea.png"
+            alt="Selezione di una linea esistente nel disegno come riferimento per l'orientamento">
+          <p class="media-caption">Il metodo Linea: si seleziona una linea già disegnata nel file CAD. AutoCAD mostra il
+            cursore di selezione per puntare direttamente all'elemento.</p>
+        </div>
+        <ol class="steps-list">
+          <li>Alla richiesta del metodo, digitare <code>L</code> e premere <kbd>Invio</kbd>.</li>
+          <li><strong>Cliccare sulla linea</strong> da usare come riferimento. La direzione va dal <em>punto
+              iniziale</em>
+            (come disegnata originariamente) al <em>punto finale</em> della linea stessa.</li>
+          <li>Non appena la linea è selezionata, DraftCP mostra a schermo una <strong>freccia verde/gialla</strong>
+            che indica la direzione proposta per l'asse X (da sinistra a destra nel rilievo).</li>
+          <li>La riga di comando chiede:
+            <code>[Conferma/Inverti] &lt;Conferma&gt;:</code>
+            <ul>
+              <li>Premere <kbd>Invio</kbd> (o digitare <code>C</code>) per <strong>confermare</strong> il verso
+                visualizzato dalla freccia.</li>
+              <li>Digitare <code>I</code> e premere <kbd>Invio</kbd> per <strong>invertire</strong> il verso: la
+                "destra" del rilievo diventerà il lato opposto.</li>
+            </ul>
+          </li>
+          <li>Cliccare il <strong>punto di Origine</strong> e digitare la <strong>quota Z</strong> come nel Metodo 1.
+          </li>
+        </ol>
+        <div class="callout tip">
+          <span class="callout-icon">&#x1F4A1;</span>
+          <div class="callout-content">
+            <strong>Come scegliere il verso corretto</strong>
+            La freccia gialla mostra sempre la direzione dell'asse X, cioè la "destra" del disegno in pianta.
+            Se nel rilievo desideri che la facciata principale si trovi in basso e il prospetto nord in alto
+            (convenzione
+            comune), la freccia deve puntare verso la facciata est (lato destro dell'edificio guardandolo dall'esterno).
+            Se la freccia punta nella direzione sbagliata, scegli <strong>Inverti</strong>.
+          </div>
+        </div>
+
+        <h2>Risultato</h2>
+        <p>Al termine del comando, DraftCP:</p>
+        <ul>
+          <li>Crea e attiva l'UCS <code>01.Pianta</code> con gli assi allineati al muro selezionato</li>
+          <li>Ruota la vista in pianta per mostrare il disegno con il muro principale orizzontale</li>
+          <li>Salva le coordinate di origine e la quota Z nei metadati del disegno per l'uso da parte dei comandi
+            successivi</li>
+          <li>Registra il completamento dell'orientamento per impedire sovrascritture accidentali future</li>
+        </ul>
+
+        <h2>Video tutorial</h2>
+        <div class="media-block">
+          <video controls preload="metadata">
+            <source src="Sezione_03_CpSetup_OCG/cps_demo.mp4" type="video/mp4">
+            Il tuo browser non supporta la riproduzione video.
+          </video>
+          <p class="media-caption">Tutorial completo: orientamento del progetto con entrambi i metodi disponibili</p>
+        </div>
+
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Suggerimento pratico</strong>
+            Per allineare l'asse X con la facciata principale, è sufficiente cliccare due punti
+            qualsiasi sul bordo di quel muro: non importa quanto siano distanti, conta solo
+            la direzione del segmento immaginario che li unisce. Usare i punti più distanti
+            possibili aumenta la precisione angolare.
+          </div>
+        </div>
+
+        <div class="callout warning">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-content">
+            <strong>Attenzione agli snap attivi</strong>
+            Prima di cliccare i punti, verificare che gli snap ad oggetto (OSNAP) non stiano
+            agganciando punti indesiderati. Se necessario, disattivarli temporaneamente con
+            <kbd>F3</kbd> durante la selezione.
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════ SEZIONE 4 — CPV SEGNAPOSTO ════════════════ -->
+      <!-- ════════════════ SEZIONE 4 — CPV CREAZIONE VISTE ════════════════ -->
+      <section class="doc-section" id="sec4">
+        <span class="section-tag">Sezione 4</span>
+        <h1 class="section-title">Creazione delle Viste <span class="cmd">CPV</span></h1>
+        <p class="section-lead">
+          Questo è il comando strutturante dell'intero progetto di rilievo. Crea automaticamente
+          tutte le viste necessarie — piante, sezioni e prospetti — con i relativi layer di
+          disegno, sistemi di riferimento (UCS) e filtri layer, pronti per essere popolati
+          con il disegno del rilievo.
+        </p>
+
+        <h2>A cosa serve</h2>
+        <p>
+          Prima di tracciare qualsiasi linea, è indispensabile che il disegno abbia una struttura
+          organizzata: un set di layer per ogni vista, un UCS che orienta correttamente l'area di
+          lavoro, e un filtro che isola i layer della vista attiva da tutti gli altri.
+          Il comando <span class="cmd">CPV</span> crea tutto questo in automatico con pochi clic,
+          risparmiando decine di minuti di configurazione manuale per ogni progetto.
+        </p>
+        <p>
+          Per le sezioni, il comando inserisce anche il <strong>blocco dinamico della linea di sezione</strong>
+          (<code>LineaSezioneDraftCP</code>) sul piano piantimetrico, con l'orientamento e la
+          lettera corretti, per indicare graficamente dove è stato effettuato il taglio.
+        </p>
+
+        <div class="callout warning">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-content">
+            <strong>Prerequisito: orientamento eseguito</strong>
+            Il comando <span class="cmd">CPV</span> richiede che l'orientamento del progetto sia
+            già stato impostato con <span class="cmd">CPS</span>. Se l'UCS <code>01.Pianta</code>
+            non esiste, il comando non può creare le viste correttamente.
+          </div>
+        </div>
+
+        <h2>Come avviare il comando</h2>
+        <p>Digitare <span class="cmd">CPV</span> nella riga di comando oppure cliccare <strong>Generazione
+            Viste</strong> nella Dashboard. Si apre la finestra di configurazione iniziale:</p>
+
+        <div class="media-sm">
+          <img src="Sezione_04_CpViste_OCG/Finestra_dialogo_configurazione_iniziale.png"
+            alt="Finestra di configurazione iniziale della Creazione Viste">
+          <p class="media-caption">La finestra di configurazione: si impostano il numero di piante, sezioni e se
+            generare i 4 prospetti automatici</p>
+        </div>
+
+        <h2>La finestra di configurazione</h2>
+        <p>La finestra è divisa in due sezioni:</p>
+
+        <h3>Piante (Viste Orizzontali)</h3>
+        <p>
+          Inserire il numero di piante da creare nel campo <strong>"Numero piante da generare"</strong>.
+          Ogni pianta corrisponde a un piano dell'edificio (es. 3 = piano terra + primo piano + sottotetto).
+          Per ogni pianta verrà chiesto il nome nella fase successiva.
+        </p>
+
+        <h3>Sezioni e Prospetti (Viste Verticali)</h3>
+        <p>
+          Inserire il numero di <strong>sezioni trasversali</strong> nel campo apposito.
+          Per ogni sezione verrà chiesta la direzione di sguardo tramite la bussola interattiva.
+        </p>
+        <p>
+          La casella <strong>"Crea prospetti automatici (Sud, Ovest, Nord, Est)"</strong>, se
+          selezionata, genera automaticamente i 4 prospetti principali dell'edificio con UCS
+          ortogonali preimpostati, senza richiedere ulteriore input dall'operatore.
+        </p>
+
+        <h3>Pulsanti aggiuntivi</h3>
+        <ul>
+          <li><strong>Impostazioni Layer…</strong> — apre il dialogo di personalizzazione dei layer (vedi sotto)</li>
+          <li><strong>Realizza</strong> — avvia la creazione delle viste con i parametri inseriti</li>
+          <li><strong>Annulla</strong> — chiude il comando senza modificare il disegno</li>
+        </ul>
+
+        <h2>Fase 1: Nome delle piante</h2>
+        <p>
+          Dopo aver cliccato <strong>Realizza</strong>, per ogni pianta da creare appare una piccola
+          finestra che chiede il nome da assegnare alla vista:
+        </p>
+
+        <div class="media-sm">
+          <img src="Sezione_04_CpViste_OCG/Finestra_dialogo_nome_piante.png"
+            alt="Dialogo per inserire il nome di una pianta">
+          <p class="media-caption">La finestra di inserimento nome pianta: il nome diventa parte del prefisso di tutti i
+            layer associati (es. <code>0.4_piano_terreno</code>)</p>
+        </div>
+
+        <p>Esempi di nomi tipici: <code>piano_terreno</code>, <code>piano_primo</code>, <code>sottotetto</code>,
+          <code>seminterrato</code>.
+        </p>
+
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Consigli per i nomi</strong>
+            Usare nomi brevi, senza spazi e con underscore al posto degli spazi (es.
+            <code>piano_primo</code> invece di <code>Piano Primo</code>). Il nome diventa il
+            suffisso dei layer: un nome lungo rende i layer difficili da leggere nella palette di AutoCAD.
+          </div>
+        </div>
+        <div class="callout warning">
+          <span class="callout-icon">&#x26A0;&#xFE0F;</span>
+          <div class="callout-content">
+            <strong>Nomi duplicati non consentiti</strong>
+            Il comando verifica automaticamente che il nome inserito non sia gia in uso da
+            un'altra vista nel disegno. Se il nome e' gia' presente, appare un messaggio di
+            errore che obbliga a scegliere un nome diverso prima di proseguire.
+            Questo controllo e' fondamentale: viste con nomi identici causerebbero
+            comportamenti imprevisti nei comandi successivi (CPM, CPE, ecc.) che si basano
+            sul nome per identificare i layer di disegno.
+          </div>
+        </div>
+
+        <h2>Fase 2: Direzione delle sezioni (Bussola)</h2>
+        <p>
+          Per ogni sezione da creare, appare la finestra della bussola interattiva che chiede
+          in quale direzione guarda la sezione (ovvero: l'operatore che osserva il disegno della
+          sezione guarda verso quale punto cardinale?).
+        </p>
+
+        <div class="media-row">
+          <div class="media-sm" style="margin:0 auto;">
+            <img src="Sezione_04_CpViste_OCG/Finestra_dialogo_bussola_sezione_NessunaSelezione.png"
+              alt="Bussola orientamento sezione — nessuna direzione selezionata">
+            <p class="media-caption">Bussola all'apertura: nessuna direzione ancora selezionata</p>
+          </div>
+          <div class="media-sm" style="margin:0 auto;">
+            <img src="Sezione_04_CpViste_OCG/Finestra_dialogo_bussola_sezione_DirESTselezionata.png"
+              alt="Bussola orientamento sezione — direzione Est selezionata">
+            <p class="media-caption">Direzione Est selezionata: la freccia verde indica il verso di sguardo</p>
+          </div>
+        </div>
+
+        <p>
+          Cliccare uno dei quattro pulsanti cardinali (<strong>Nord</strong>, <strong>Sud</strong>,
+          <strong>Est</strong>, <strong>Ovest</strong>) per selezionare la direzione.
+          Cliccando il pulsante, la freccia verde nella bussola si orienta nella direzione scelta
+          e il pulsante <strong>Conferma</strong> diventa attivo.
+        </p>
+
+        <h3>Opzione "Altro…" — sezione con orientamento personalizzato</h3>
+        <p>
+          Per sezioni inclinate o con orientamento non ortogonale rispetto ai punti cardinali,
+          cliccare il pulsante <strong>Altro…</strong>. Apparirà la X rossa nella bussola a indicare
+          la modalità personalizzata attiva:
+        </p>
+
+        <div class="media-sm">
+          <img src="Sezione_04_CpViste_OCG/Finestra_dialogo_bussola_sezione_DirALTROselezionata.png"
+            alt="Bussola con modalità Altro selezionata — X rossa">
+          <p class="media-caption">Modalità "Altro": la X rossa indica che la direzione verrà definita graficamente
+            direttamente sul modello</p>
+        </div>
+
+        <p>
+          Dopo aver cliccato <strong>Conferma</strong> con la modalità Altro attiva, AutoCAD chiede
+          di tracciare graficamente la linea di sezione direttamente sul viewport:
+        </p>
+
+        <ol class="steps-list">
+          <li>Cliccare il <strong>primo punto</strong> della linea di sezione sul modello (es. un bordo del muro).</li>
+          <li>Cliccare il <strong>secondo punto</strong> della linea (dall'altra parte del corpo di fabbrica). La linea
+            verde appare in anteprima sul viewport.</li>
+          <li>Il sistema chiede di <strong>confermare la direzione di vista</strong> con <kbd>S</kbd> (Sì), <kbd>N</kbd>
+            (No — inverte il verso) oppure <kbd>I</kbd> (Inverti). Verificare che la freccia gialla punti nella
+            direzione corretta di osservazione.</li>
+        </ol>
+
+        <div class="media-block">
+          <img src="Sezione_04_CpViste_OCG/Anteprima_linea_temporanea_direzioneALTRO_dir1.png"
+            alt="Anteprima della linea di sezione con direzione 1 sul viewport CAD">
+          <p class="media-caption">Prima direzione di vista proposta: la freccia gialla indica il verso in cui guarda
+            l'operatore nella sezione. Rispondere <kbd>S</kbd> per confermare o <kbd>I</kbd> per invertire.</p>
+        </div>
+
+        <div class="media-block">
+          <img src="Sezione_04_CpViste_OCG/Anteprima_linea_temporanea_direzioneALTRO_dir2.png"
+            alt="Anteprima della linea di sezione con direzione invertita sul viewport CAD">
+          <p class="media-caption">Direzione invertita dopo aver risposto <kbd>I</kbd>: la freccia gialla ora punta
+            nella direzione opposta. Rispondere <kbd>S</kbd> per confermare questa direzione.</p>
+        </div>
+
+        <h2>Personalizzazione dei layer (opzionale)</h2>
+        <p>
+          Prima di cliccare <strong>Realizza</strong>, è possibile aprire il dialogo
+          <strong>Impostazioni Layer…</strong> per personalizzare i layer che verranno
+          creati per ogni vista:
+        </p>
+
+        <div class="media-md">
+          <img src="Sezione_04_CpViste_OCG/Finestra_dialogo_layer_personalizzati.png"
+            alt="Dialogo impostazioni layer personalizzati">
+          <p class="media-caption">Il dialogo di personalizzazione: prefisso, colore, tipo linea e spessore per ciascun
+            layer. Il radio button a sinistra indica il layer principale (Princ.) usato di default.</p>
+        </div>
+
+        <p>Per ogni layer della lista è possibile modificare:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Colonna</th>
+              <th>Descrizione</th>
+              <th>Valore di default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Princ.</strong></td>
+              <td>Il layer principale attivo all'apertura della vista</td>
+              <td>0.3 (Giallo)</td>
+            </tr>
+            <tr>
+              <td><strong>Nome Layer (Prefisso)</strong></td>
+              <td>Il prefisso del layer (seguito automaticamente da <code>_NomeVista</code>)</td>
+              <td>0.4, 0.3, 0.2, 0.1, 0.0, PianoSezione</td>
+            </tr>
+            <tr>
+              <td><strong>Colore</strong></td>
+              <td>Colore ACI del layer nel disegno</td>
+              <td>5=Blu, 2=Giallo, 4=Ciano, 1=Rosso, 9=Grigio, 30=Arancione</td>
+            </tr>
+            <tr>
+              <td><strong>Tipo Linea</strong></td>
+              <td>Tipo di linea associato</td>
+              <td>Continuous per tutti</td>
+            </tr>
+            <tr>
+              <td><strong>Spessore</strong></td>
+              <td>Spessore di stampa (mm)</td>
+              <td>Predefinito (-3) per tutti</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Cosa viene creato nel disegno</h2>
+        <p>Al termine del comando, per ogni vista creata sono presenti nel disegno:</p>
+        <ul>
+          <li><strong>Layer di disegno</strong> con il suffisso del nome vista (es. <code>0.4_piano_terreno</code>)</li>
+          <li><strong>Vista AutoCAD</strong> con l'area e il fattore di zoom memorizzati</li>
+          <li><strong>UCS associato</strong> (es. <code>01.Pianta</code> per le piante, <code>02.Sezione_A-A'</code> per
+            le sezioni)</li>
+          <li><strong>Filtro gruppo layer</strong> che isola i layer di quella vista durante la navigazione</li>
+          <li><strong>Blocco linea di sezione</strong> sulla pianta (solo per le sezioni), con lettera e orientamento
+            corretti</li>
+        </ul>
+
+        <div class="callout note">
+          <span class="callout-icon">📌</span>
+          <div class="callout-content">
+            <strong>Suffissi e nomenclatura automatica</strong>
+            I layer vengono nominati con il formato <code>prefisso_nomeVista</code>
+            (es. <code>0.4_piano_terreno</code>, <code>0.3_sezione_A-A'</code>).
+            Nell'esportazione finale con <span class="cmd">CPE</span>, questi suffissi vengono
+            rimossi automaticamente per produrre un file DWG con layer puliti e generici.
+          </div>
+        </div>
+
+        <h2>Video tutorial</h2>
+        <div class="media-block">
+          <video controls preload="metadata">
+            <source src="Sezione_04_CpViste_OCG/cpv_demo.mp4" type="video/mp4">
+            Il tuo browser non supporta la riproduzione video.
+          </video>
+          <p class="media-caption">Tutorial completo: creazione di piante, sezioni ortogonali e sezione con orientamento
+            personalizzato (opzione "Altro")</p>
+        </div>
+
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Aggiungere viste in un secondo momento</strong>
+            Il comando <span class="cmd">CPV</span> può essere rieseguito in qualsiasi momento
+            per aggiungere nuove viste al progetto. Le viste già esistenti non vengono toccate;
+            quelle nuove vengono aggiunte con la numerazione progressiva corretta.
+          </div>
+        </div>
+      </section>
+      <!-- ════════════════ SEZIONE 5 — NAVIGAZIONE VISTE (AC) ════════════════ -->
+      <section class="doc-section" id="sec5">
+        <span class="section-tag">Sezione 5</span>
+        <h1 class="section-title">Navigazione tra le Viste <span class="cmd">AC</span></h1>
+        <p class="section-lead">
+          Il comando più usato dell'intera sessione di lavoro. Passa istantaneamente da una vista
+          all'altra attivando il corrispondente UCS e isolando automaticamente i layer
+          di quella vista in una frazione di secondo.
+        </p>
+
+        <h2>A cosa serve</h2>
+        <p>
+          Durante la restituzione grafica si lavora costantemente su viste diverse:
+          si traccia un muro sulla pianta, si controlla l'allineamento sulla sezione,
+          si verifica la quota sul prospetto. Senza un comando dedicato, ogni cambio
+          di vista richiederebbe di attivare manualmente l'UCS, aggiornare i filtri
+          layer e reimpostare la visualizzazione: una sequenza da tre o quattro passi
+          che si ripete centinaia di volte per progetto.
+        </p>
+        <p>
+          Il comando <span class="cmd">AC</span> esegue tutto questo in una sola mossa:
+          attiva l'UCS della vista selezionata, isola i suoi layer e porta il disegno
+          nella visualizzazione corretta.
+        </p>
+
+        <h2>Come funziona</h2>
+        <p>Digitare <span class="cmd">AC</span> e premere <kbd>Invio</kbd>. Nella riga di comando appare la lista
+          numerata di tutte le viste disponibili nel disegno:</p>
+
+        <div class="media-block">
+          <img src="Sezione_05_TraslViste_OCG/Screenshot_elenco_viste.png"
+            alt="La riga di comando di AutoCAD con la lista numerata delle viste del progetto">
+          <p class="media-caption">La lista delle viste nella riga di comando. Il sistema mostra tutte le viste con il
+            loro numero progressivo; basta digitare il numero desiderato e premere Invio.</p>
+        </div>
+
+        <p>
+          Il sistema mostra tutte le viste nel formato <code>NN.NomeVista</code>
+          (es. <code>01.Pianta_piano_terreno</code>, <code>03.Sezione_A-A'</code>,
+          <code>06.Prospetto_Sud</code>). Digitare il numero della vista e premere
+          <kbd>Invio</kbd>: il disegno si sposta nella vista selezionata in un istante.
+        </p>
+
+        <h2>Flusso operativo</h2>
+        <ol class="steps-list">
+          <li>Digitare <span class="cmd">AC</span> e premere <kbd>Invio</kbd> oppure <kbd>Spazio</kbd>.</li>
+          <li>Leggere la lista delle viste visualizzata nella riga di comando.</li>
+          <li>Digitare il <strong>numero</strong> della vista desiderata (es. <code>3</code> per la Sezione_A-A').</li>
+          <li>Premere <kbd>Invio</kbd> oppure <kbd>Spazio</kbd>: AutoCAD attiva la vista, l'UCS e il filtro layer
+            corrispondenti.</li>
+        </ol>
+
+        <h2>Video tutorial</h2>
+        <div class="media-block">
+          <video controls preload="metadata">
+            <source src="Sezione_05_TraslViste_OCG/demo_straslviste.mp4" type="video/mp4">
+            Il tuo browser non supporta la riproduzione video.
+          </video>
+          <p class="media-caption">Tutorial: navigazione rapida tra viste diverse durante una sessione di disegno reale
+          </p>
+        </div>
+
+        <div class="callout tip">
+          <span class="callout-icon">&#x1F4A1;</span>
+          <div class="callout-content">
+            <strong>Perché si chiama "AC"?</strong>
+            Il nome è pensato per la velocità massima di digitazione. Con la mano sinistra
+            sulla tastiera: il dito <strong>anulare</strong> preme <kbd>A</kbd>,
+            l'<strong>indice</strong> preme <kbd>C</kbd> e il <strong>pollice</strong>
+            preme <kbd>Spazio</kbd> per confermare. Poi la mano destra digita il numero
+            della vista e il pollice sinistro preme nuovamente <kbd>Spazio</kbd>.
+            L'intera sequenza richiede meno di un secondo.
+          </div>
+        </div>
+
+        <div class="callout note">
+          <span class="callout-icon">&#x1F4CC;</span>
+          <div class="callout-content">
+            <strong>Numerazione non continua</strong>
+            Se una vista è stata eliminata con <span class="cmd">DELV</span>, le viste
+            vengono rinumerate automaticamente. È buona pratica rileggere l'elenco
+            ad inizio sessione se il progetto ha subito modifiche.
+          </div>
+        </div>
+      </section>
+      <section clas <!-- ════════════════ SEZIONE 6 — TRACCIAMENTO MURI (CPM) ════════════════ -->
+        <section class="doc-section" id="sec6">
+          <span class="section-tag">Sezione 6</span>
+          <h1 class="section-title">Tracciamento Muri <span class="cmd">CPM</span></h1>
+          <p class="section-lead">
+            Guida nel disegno dei muri a due linee correggendo automaticamente le imprecisioni
+            della nuvola di punti, garantendo parallelismo tra le facce, allineamento agli assi
+            del progetto e arrotondamento dello spessore. Include la chiusura automatica
+            dei giunti con i muri vicini.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            La nuvola di punti restituisce la geometria reale dell'edificio, che per definizione
+            non è mai perfettamente retta: i muri hanno piccole irregolarità, la scansione
+            introduce rumore, e le pareti non sono mai esattamente ortogonali al decimo di
+            millimetro. Disegnare le linee di un muro semplicemente seguendo i punti della
+            nuvola produce un risultato che graficamente sembra corretto ma non lo è:
+            le facce non sono parallele, i muri non chiudono agli angoli, gli spessori
+            variano millimetro per millimetro.
+          </p>
+          <p>
+            Il comando <span class="cmd">CPM</span> corregge tutte queste imprecisioni
+            automaticamente: l'operatore clicca quattro punti approssimativi sul muro
+            (due per faccia) e il comando calcola le linee ottimali rispettando le
+            tolleranze configurate, chiudendo poi automaticamente i giunti con i muri
+            già disegnati nelle vicinanze.
+          </p>
+
+          <h2>Risultato: prima e dopo</h2>
+          <div class="media-block">
+            <img src="Sezione_06_CpMuri_OCG/Screenshot_prima.png"
+              alt="La nuvola di punti della pianta prima del tracciamento dei muri — solo punti, nessuna linea CAD">
+            <p class="media-caption">La pianta prima del tracciamento: solo la nuvola di punti, con la geometria
+              dell'edificio visibile ma non ancora tracciata in CAD. L'icona UCS al centro indica che l'orientamento è
+              già stato impostato con CPS.</p>
+          </div>
+          <div class="media-block">
+            <img src="Sezione_06_CpMuri_OCG/Screenshot_risultato_dopo.png"
+              alt="La pianta dopo il tracciamento completo dei muri con CPM — linee blu pulite sopra la nuvola">
+            <p class="media-caption">La pianta dopo il tracciamento: le linee blu (layer 0.4) tracciano con precisione
+              tutte le pareti dell'edificio, con giunti chiusi agli angoli e agli innesti. Il tracciamento completo di
+              questa pianta ha richiesto meno di cinque minuti.</p>
+          </div>
+
+          <h2>Come avviare il comando</h2>
+          <p>Digitare <span class="cmd">CPM</span> oppure cliccare <strong>Tracciamento Muri</strong> nella Dashboard.
+            Il comando si avvia e mostra nella riga di comando un prompt con le tolleranze correnti:</p>
+          <p
+            style="font-family:monospace; font-size:.9rem; background:rgba(0,0,0,.3); padding:10px 16px; border-radius:8px; border-left:3px solid var(--accent-blue); margin:16px 0;">
+            Specifica il 1° punto della faccia 1 [Tolleranza/Uscita] &lt;D=1.0 cm, A=1.5°, S=0.05 cm&gt;:
+          </p>
+          <p>
+            <strong>D</strong> = Tolleranza Distanza &nbsp;·&nbsp;
+            <strong>A</strong> = Tolleranza Angolare &nbsp;·&nbsp;
+            <strong>S</strong> = Arrotondamento Spessore
+          </p>
+
+          <h2>Il sistema di tolleranze</h2>
+          <p>
+            Il sistema di rettifica usa tre parametri per decidere come correggere la geometria
+            del muro rispetto ai punti cliccati:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Parametro</th>
+                <th>Descrizione</th>
+                <th>Valore tipico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tolleranza Distanza</strong></td>
+                <td>Massimo spostamento consentito (perpendicolare al muro) tra il punto cliccato e la linea
+                  rettificata. Se il punto cade più lontano, la rettifica non viene applicata.</td>
+                <td>1–2 cm</td>
+              </tr>
+              <tr>
+                <td><strong>Tolleranza Angolare</strong></td>
+                <td>Massimo scostamento angolare consentito rispetto all'asse più vicino dell'UCS. Fondamentale per i
+                  tratti corti dove la tolleranza lineare non è sufficiente.</td>
+                <td>1.5°–3°</td>
+              </tr>
+              <tr>
+                <td><strong>Arrotondamento Spessore</strong></td>
+                <td>Arrotonda lo spessore del muro al multiplo più vicino di questo valore (es. 0.05 cm = arrotonda al
+                  mezzo millimetro). Impostare 0 per disabilitare.</td>
+                <td>0.05 cm</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>La Soglia di Switch lineare/angolare</h3>
+          <p>
+            Il comando applica un meccanismo intelligente di selezione della tolleranza:
+            sotto una certa lunghezza del muro, usa la tolleranza angolare (più adatta ai
+            tratti corti dove un piccolo errore angolare produce grande errore lineare);
+            sopra quella lunghezza, usa la tolleranza lineare.
+          </p>
+          <p>
+            Questa soglia viene calcolata automaticamente con la formula:
+          </p>
+          <p
+            style="text-align:center; font-family:monospace; background:rgba(0,0,0,.3); padding:10px; border-radius:8px; margin:16px 0;">
+            L = (2 × TolleranzaDistanza) / sin(TolleranzaAngolare)
+          </p>
+          <p>
+            Il valore calcolato è mostrato in tempo reale nella finestra di impostazione parametri
+            (campo <em>"Soglia Corrente di Cambio Tolleranza"</em>) e si aggiorna ogni volta che
+            si modifica uno dei due parametri.
+          </p>
+
+          <h2>Configurazione dei parametri</h2>
+          <p>
+            Prima di cliccare il primo punto, digitare <kbd>T</kbd> per aprire la
+            finestra di impostazione dei parametri:
+          </p>
+          <div class="media-sm">
+            <img src="Sezione_06_CpMuri_OCG/Finestra_dialogo_impostazione_parametri.png"
+              alt="La finestra DraftCP - Parametri Disegno Muri con tutti i campi di tolleranza">
+            <p class="media-caption">La finestra di configurazione: tolleranza distanza, tolleranza angolare,
+              arrotondamento spessore, la soglia di switch calcolata in tempo reale, e le opzioni per l'unione
+              automatica dei giunti.</p>
+          </div>
+          <p>I parametri vengono salvati automaticamente nel Registro di Windows e sono mantenuti tra una sessione e
+            l'altra.</p>
+          <div class="callout warning">
+            <span class="callout-icon">&#x26A0;&#xFE0F;</span>
+            <div class="callout-content">
+              <strong>Arrotondamento spessore vs. tolleranza distanza</strong>
+              Se l'arrotondamento dello spessore è maggiore della tolleranza di distanza,
+              la correzione dello spessore fallirà frequentemente perché il punto rettificato
+              uscirebbe dalla zona di tolleranza. Il comando avvisa l'utente se questo accade.
+              Regola pratica: mantenere l'arrotondamento spessore &#x2264; tolleranza distanza.
+            </div>
+          </div>
+
+          <h2>Le tre regole di rettifica (in ordine di priorità)</h2>
+          <p>
+            Quando vengono verificati più candidati geometrici per la posizione finale del muro,
+            il sistema li valuta in questo ordine di priorità:
+          </p>
+          <div class="workflow">
+            <div class="workflow-step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <strong>Regola di Fedeltà</strong>
+                <span>Il muro rimane il più vicino possibile ai punti cliccati sulla nuvola (priorità massima). La
+                  geometria reale dell'edificio ha sempre la precedenza.</span>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <strong>Regola di Parallelismo</strong>
+                <span>Le due facce del muro (linea interna e linea esterna) devono essere perfettamente parallele tra
+                  loro.</span>
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <strong>Regola di Ortogonalità</strong>
+                <span>Il muro si allinea all'asse più vicino dell'UCS del progetto (orizzontale o verticale). Applicata
+                  solo se il risultato resta entro le tolleranze.</span>
+              </div>
+            </div>
+          </div>
+
+          <h2>Flusso operativo: i quattro punti</h2>
+          <p>
+            Il comando acquisisce quattro punti e li analizza per identificare autonomamente
+            le due facce del muro. <strong>L'ordine di click è completamente libero:</strong>
+            l'algoritmo valuta tutte le possibili combinazioni e individua i due lati più
+            lunghi del quadrilatero, che corrispondono alle due facce parallele del muro.
+            Non importa in quale sequenza si clicchino i quattro punti.
+          </p>
+          <ol class="steps-list">
+            <li>Digitare <span class="cmd">CPM</span> o cliccare <strong>Tracciamento Muri</strong> nella Dashboard.
+              (Opzionale: digitare <kbd>T</kbd> per aprire i parametri prima di procedere.)</li>
+            <li>Cliccare un <strong>primo punto</strong> su uno dei due bordi del muro sulla nuvola.</li>
+            <li>Cliccare un <strong>secondo punto</strong> — può essere sull'altro bordo o sullo stesso, l'ordine non
+              cambia il risultato.</li>
+            <li>Cliccare un <strong>terzo punto</strong> su uno dei bordi del muro.</li>
+            <li>Cliccare il <strong>quarto punto</strong> per completare la selezione. I quattro punti definiscono un
+              quadrilatero; il comando identifica i due lati più lunghi come le due facce del muro.</li>
+            <li>Il sistema disegna due linee verdi provvisorie e chiede conferma:
+              <strong>[Si/Ridisegna/Annulla]</strong>. Premere <kbd>Invio</kbd> (o <kbd>Spazio</kbd>) per confermare.
+            </li>
+            <li>Il comando calcola la geometria rettificata, disegna le due linee definitive sul layer attivo e chiude
+              automaticamente i giunti con i muri vicini.</li>
+            <li>Il prompt riparte dal passo 2 per tracciare il muro successivo. Premere <kbd>Esc</kbd> per terminare il
+              comando.</li>
+          </ol>
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Come funziona il riconoscimento automatico delle facce</strong>
+              Dei sei possibili segmenti che si possono formare con quattro punti, i due più
+              lunghi corrispondono sempre alle facce del muro (i lati), mentre i più corti
+              sono le diagonali o i lati corti. L'algoritmo seleziona i due lati più lunghi
+              e li usa come facce da rettificare, indipendentemente dall'ordine con cui
+              l'operatore ha cliccato i punti.
+            </div>
+          </div>
+
+          <h2>Unione automatica dei giunti</h2>
+          <p>
+            Se <strong>"Abilita unione automatica muri"</strong> è attivo nei parametri,
+            al termine di ogni tratto il comando cerca automaticamente muri già disegnati
+            entro il raggio di ricerca configurato (es. 80 cm) e gestisce la chiusura
+            geometrica del giunto:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo giunto</th>
+                <th>Come viene chiuso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Giunto a L (angolo)</strong></td>
+                <td>Le estremità del muro nuovo e del muro vicino vengono estese o tagliate fino al punto di
+                  intersezione, formando un angolo pulito senza sovrapposizioni né lacune.</td>
+              </tr>
+              <tr>
+                <td><strong>Giunto a T (innesto)</strong></td>
+                <td>Il muro intermedio viene allungato o accorciato fino alla superficie del muro principale, e il muro
+                  principale viene spezzato nel punto di innesto creando un giunto a T pulito.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Layer di destinazione</strong>
+              Le linee vengono disegnate sul <strong>layer corrente attivo</strong>
+              della vista. Per tracciarle sul layer corretto, assicurarsi che la vista
+              sia stata attivata con <span class="cmd">AC</span> prima di avviare
+              <span class="cmd">CPM</span>, oppure impostare manualmente il layer desiderato
+              (es. <code>0.4_01.Pianta_piano_terreno</code>) dalla palette layer di AutoCAD.
+            </div>
+          </div>
+
+          <h2>Video tutorial</h2>
+          <div class="media-block">
+            <video controls preload="metadata">
+              <source src="Sezione_06_CpMuri_OCG/cpm_demo.mp4" type="video/mp4">
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+            <p class="media-caption">Tutorial completo: tracciamento di tutti i muri di una pianta reale in meno di
+              cinque minuti, con giunti a L e T chiusi automaticamente</p>
+          </div>
+        </section>
+        <section class="doc-section" id="sec7">
+          <span class="section-tag">Sezione 7</span>
+          <h1 class="section-title">Inserimento Finestre <span class="cmd">CPF</span></h1>
+          <p class="section-lead">
+            Inserisce finestre nei muri già tracciati con tre click: due sull'apertura
+            (lato esterno) e uno sulla linea interna del muro. Genera il taglio del muro
+            e disegna automaticamente la geometria completa del serramento — in modalità
+            semplice o complessa con tutti i dettagli costruttivi.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            Dopo aver tracciato i muri con <span class="cmd">CPM</span>, il passo
+            successivo è inserire le aperture. Il comando <span class="cmd">CPF</span>
+            esegue questa operazione in modo preciso e parametrico: rileva automaticamente
+            lo spessore del muro dai click dell'operatore, spezza le due linee del muro
+            nell'apertura con il comando Break e disegna la rappresentazione 2D della
+            finestra sul layer serramento corretto.
+          </p>
+
+          <h2>Le due modalità: Semplice e Complessa</h2>
+          <p>
+            La finestra di dialogo presenta un selettore <strong>Semplice / Complessa</strong>
+            in alto a destra che cambia la quantità di parametri e di dettagli grafici generati.
+          </p>
+
+          <h3>Modalità Semplice</h3>
+          <p>
+            Genera una rappresentazione essenziale: le linee di spessore del serramento
+            e la mazzetta (profondità di arretramento). Ideale per una prima restituzione
+            rapida o per finestre standard dove i dettagli costruttivi non sono necessari.
+          </p>
+          <div class="media-block">
+            <img src="Sezione_07_CpFinestre_OCG/Finestra_dialogo_finestra_semplice.png"
+              alt="Finestra di dialogo Inserimento Finestra in modalità Semplice con parametri e anteprima grafica">
+            <p class="media-caption">Modalità Semplice: i parametri principali (larghezza, mazzetta, serramento) e
+              l'anteprima grafica aggiornata in tempo reale. Lo spessore muro viene rilevato automaticamente dai click.
+            </p>
+          </div>
+
+          <h3>Modalità Complessa</h3>
+          <p>
+            Genera la rappresentazione completa con tutti i componenti costruttivi:
+            mazzetta, sguincio, controtelaio, serramento, davanzale esterno e davanzale
+            interno (opzionale). Adatta alla restituzione definitiva da consegnare.
+          </p>
+          <div class="media-block">
+            <img src="Sezione_07_CpFinestre_OCG/Finestra_dialogo_finestra_complessa.png"
+              alt="Finestra di dialogo Inserimento Finestra in modalità Complessa con tutti i parametri costruttivi quotati">
+            <p class="media-caption">Modalità Complessa: tutti i componenti costruttivi sono configurabili e quotati
+              sull'anteprima. La casella "Presenza Davanzale interno" abilita i campi del davanzale interno.</p>
+          </div>
+
+          <h2>Il pulsante &lt; — Misurazione sul disegno</h2>
+          <p>
+            Ogni campo numerico ha un pulsante <kbd>&lt;</kbd> a fianco. Cliccandolo,
+            la finestra si minimizza temporaneamente e il cursore torna sul disegno:
+            è possibile misurare il valore direttamente sulla nuvola di punti con due
+            click (es. larghezza reale del serramento, profondità della mazzetta).
+            Il valore misurato viene inserito automaticamente nel campo corrispondente
+            e la finestra si riapre.
+          </p>
+
+          <h2>Flusso operativo: i tre click</h2>
+          <p>
+            Il comando non apre subito la finestra di dialogo: acquisisce prima i tre
+            punti che definiscono geometria e orientamento della finestra, poi presenta
+            i parametri con i valori già calcolati (larghezza rilevata, spessore muro
+            rilevato).
+          </p>
+          <ol class="steps-list">
+            <li>Digitare <span class="cmd">CPF</span> o cliccare <strong>Inserimento Finestre</strong> nella Dashboard.
+            </li>
+            <li>La riga di comando chiede:
+              <code>Vuoi verificare o modificare i parametri prima di iniziare? [Si/No] &lt;No&gt;:</code>
+              <ul>
+                <li>Premere <kbd>Invio</kbd> per rispondere <strong>No</strong> e procedere direttamente (scelta
+                  consigliata per gli operatori esperti che hanno già configurato i parametri).</li>
+                <li>Digitare <code>S</code> per aprire subito la <strong>finestra parametri</strong> e impostare
+                  spessore serramento, mazzetta, ecc. prima ancora di cliccare sul muro.</li>
+              </ul>
+            </li>
+            <li>Cliccare il <strong>primo punto della larghezza</strong> (lato esterno del muro): posizionarsi su un
+              bordo dell'apertura, sulla linea esterna del muro. Il click identifica anche la linea esterna del muro e
+              ne rileva il layer.</li>
+            <li>Cliccare il <strong>secondo punto della larghezza</strong> (sempre sul lato esterno): l'altro bordo
+              dell'apertura sulla stessa linea. La distanza tra i due click diventa la larghezza della finestra.</li>
+            <li>Cliccare un punto sulla <strong>linea interna del muro</strong>: questo terzo click determina lo
+              spessore del muro (distanza tra lato esterno e lato interno) e il verso di inserimento (da quale lato è
+              l'interno).</li>
+            <li>La riga di comando chiede se reimpostare i parametri. Rispondere <strong>Si</strong> per aprire la
+              finestra di configurazione
+              oppure <strong>No</strong> per disegnare immediatamente con i valori correnti.</li>
+            <li>Il comando taglia le due linee del muro nell'apertura e disegna la geometria della finestra sul layer
+              selezionato.</li>
+          </ol>
+          <div class="callout warning">
+            <span class="callout-icon">&#x26A0;&#xFE0F;</span>
+            <div class="callout-content">
+              <strong>Controllo automatico dei parametri (finestra Semplice)</strong>
+              Per la tipologia <strong>Semplice</strong>, DraftCP verifica automaticamente che la somma di
+              <em>Mazzetta</em> e <em>Spessore serramento</em> non superi lo spessore del muro rilevato.
+              Se i valori non sono compatibili, un avviso compare a schermo indicando i valori in conflitto
+              e la finestra dei parametri si apre nuovamente per permettere la correzione prima di procedere al disegno.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>I click 1 e 2 devono essere sul lato esterno</strong>
+              Il primo e il secondo punto vanno posizionati sulla linea esterna del muro
+              (il lato rivolto verso l'esterno dell'edificio). Il terzo punto sul lato
+              interno. Questa distinzione è necessaria perché la mazzetta, lo sguincio
+              e i davanzali si generano in relazione al lato esterno.
+            </div>
+          </div>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Layer corrente</strong>
+              Il comando propone automaticamente il layer corrente al momento del lancio
+              del comando.
+              È possibile cambiarlo dal menu a tendina nel pannello <em>"Layer serramento"</em>
+              nella parte inferiore della finestra senza dover uscire dal comando.
+            </div>
+          </div>
+
+          <h2>Risultato</h2>
+          <div class="media-block">
+            <img src="Sezione_07_CpFinestre_OCG/Screenshot_finestra_realizzata.png"
+              alt="Dettaglio di una finestra complessa inserita: linee rosse per il serramento, linee blu per il muro, su sfondo della nuvola di punti">
+            <p class="media-caption">Risultato di un inserimento in modalità Complessa: le linee rosse rappresentano il
+              serramento (layer Serramenti), le linee blu il muro (layer 0.4). Il taglio del muro e tutte le componenti
+              costruttive sono stati generati automaticamente.</p>
+          </div>
+
+          <h2>Video tutorial</h2>
+          <div class="media-block">
+            <video controls preload="metadata">
+              <source src="Sezione_07_CpFinestre_OCG/cpf_demo.mp4" type="video/mp4">
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+            <p class="media-caption">Tutorial: inserimento di una finestra complessa con misurazione dei parametri
+              direttamente sulla nuvola di punti</p>
+          </div>
+        </section>
+        <!-- ════════════════ SEZIONE 8 — INSERIMENTO PORTE (CPP) ════════════════ -->
+        <section class="doc-section" id="sec8">
+          <span class="section-tag">Sezione 8</span>
+          <h1 class="section-title">Inserimento Porte <span class="cmd">CPP</span></h1>
+          <p class="section-lead">
+            Inserisce porte interne nei muri tracciati con due click. Taglia il muro
+            nell'apertura, disegna le linee di chiusura laterali e posiziona
+            opzionalmente il blocco dinamico della porta, adattandolo automaticamente
+            alla larghezza e allo spessore rilevati.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            Analogamente a <span class="cmd">CPF</span> per le finestre, il comando
+            <span class="cmd">CPP</span> gestisce l'inserimento delle aperture di porta
+            all'interno dei muri già disegnati. La differenza fondamentale è la presenza
+            del blocco dinamico parametrico che rappresenta l'anta della porta con il
+            suo arco di apertura.
+          </p>
+
+          <h2>La finestra di configurazione</h2>
+          <div class="media-md">
+            <img src="Sezione_08_CpPorte_OCG/Finestra_dialogo_impostazione_parametri.png"
+              alt="Finestra di dialogo Inserimento Porta Interna con anteprima grafica e parametri">
+            <p class="media-caption">La finestra di configurazione porta: larghezza (rilevata automaticamente dai
+              click), arrotondamento opzionale, spessore muro (rilevato automaticamente) e scelta del layer serramento.
+            </p>
+          </div>
+          <p>I parametri disponibili sono:</p>
+          <ul>
+            <li><strong>Larghezza porta</strong>: rilevata automaticamente dalla distanza tra il primo e il secondo
+              click. Modificabile manualmente. Il pulsante <kbd>&lt;</kbd> permette di rimisurare sul disegno.</li>
+            <li><strong>Applica arrotondamento</strong>: se attivo, arrotonda la larghezza al multiplo del valore
+              specificato (es. 5 cm). Utile per standardizzare le misure dei vani porta.</li>
+            <li><strong>Spessore muro</strong>: rilevato automaticamente. Campo di sola lettura.</li>
+            <li><strong>Inserisci blocco serramento</strong>: se attivo, dopo il taglio del muro viene inserito il
+              blocco dinamico della porta posizionato e dimensionato automaticamente.</li>
+            <li><strong>Layer serramento</strong>: layer di destinazione per il blocco porta e le linee di chiusura.
+            </li>
+          </ul>
+
+          <h2>Il blocco dinamico della porta</h2>
+          <p>
+            Se l'opzione <strong>"Inserisci blocco serramento"</strong> è attiva, il comando
+            inserisce automaticamente il blocco <code>PortaInterna_CpPorte_OCG</code>,
+            che include l'anta e lo spigolo di apertura. Il blocco viene:
+          </p>
+          <ul>
+            <li>Posizionato esattamente sull'apertura, allineato al muro</li>
+            <li>Scalato alla larghezza dell'apertura rilevata</li>
+            <li>Adattato allo spessore del muro</li>
+          </ul>
+          <p>
+            Una volta inserito, il blocco è un <strong>blocco dinamico parametrico</strong>:
+            selezionandolo appaiono i grip blu che permettono di modificare interattivamente
+            il senso di apertura (destra/sinistra, interno/esterno) semplicemente cliccando
+            le frecce di controllo, senza rieseguire il comando.
+          </p>
+          <div class="media-md">
+            <img src="Sezione_08_CpPorte_OCG/Porta_blocco_parametrico-dinamico.png"
+              alt="Il blocco dinamico della porta inserito con i grip blu di controllo visibili">
+            <p class="media-caption">Il blocco dinamico della porta inserito nel muro. I grip blu (frecce triangolari)
+              permettono di modificare il senso di apertura con un semplice click, senza rieseguire il comando.
+            </p>
+          </div>
+
+          <h2>Flusso operativo: due click</h2>
+          <p>
+            A differenza di <span class="cmd">CPF</span>, il comando <span class="cmd">CPP</span>
+            richiede soltanto <strong>due click all'interno del muro</strong>. Il comando rileva
+            automaticamente le linee del muro più vicine a ciascun click, calcola lo spessore
+            del muro, determina l'orientamento e il verso dell'apertura. Tutto il resto
+            — taglio, chiusura laterale, inserimento del blocco — avviene senza ulteriori
+            interventi dell'operatore.
+          </p>
+          <ol class="steps-list">
+            <li>Digitare <span class="cmd">CPP</span> o cliccare <strong>Inserimento Porte</strong> nella Dashboard.
+            </li>
+            <li>Cliccare il <strong>primo punto</strong> all'interno del muro, in corrispondenza di un bordo
+              dell'apertura.</li>
+            <li>Cliccare il <strong>secondo punto</strong> all'interno del muro, in corrispondenza dell'altro bordo
+              dell'apertura. La distanza tra i due click definisce la larghezza del vano porta.</li>
+            <li>Se lo si desidera, aprire la finestra di configurazione. Impostare i parametri (larghezza,
+              arrotondamento, layer) e cliccare <strong>OK</strong>.</li>
+            <li>Il comando rileva automaticamente le linee del muro, calcola lo spessore, taglia le linee del muro
+              nell'apertura, disegna le linee di chiusura laterali e inserisce il blocco porta (se l'opzione è attiva).
+            </li>
+          </ol>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>I click devono essere dentro il muro</strong>
+              I due punti vanno cliccati <em>tra</em> le due linee del muro, non sulle
+              linee né al di fuori. Il comando usa la posizione del click per individuare
+              la linea del muro più vicina su ciascun lato e calcolare automaticamente
+              la larghezza dell'apertura.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Modificare il senso di apertura dopo l'inserimento</strong>
+              Non è necessario rieseguire <span class="cmd">CPP</span> per invertire
+              il senso di apertura. Selezionare il blocco porta inserito e cliccare
+              sui i grip blu: le frecce di controllo permettono di specchiare
+              l'anta (destra/sinistra) e di cambiarla di lato (interno/esterno)
+              in tempo reale.
+            </div>
+          </div>
+
+          <h2>Video tutorial</h2>
+          <div class="media-block">
+            <video controls preload="metadata">
+              <source src="Sezione_08_CpPorte_OCG/cpp_demo.mp4" type="video/mp4">
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+            <p class="media-caption">Tutorial: inserimento di porte interne con il blocco dinamico e modifica del senso
+              di apertura tramite grip</p>
+          </div>
+        </section>
+
+
+        <section class="doc-section" id="sec9">
+          <span class="section-tag">Sezione 9</span>
+          <h1 class="section-title">Blocchi di Controllo <span class="cmd">CPB</span></h1>
+          <p class="section-lead">
+            Copia il disegno di una vista su una vista di destinazione diversa, ruotandolo
+            geometricamente nell'orientamento corretto. Strumento fondamentale per verificare
+            l'allineamento verticale tra piante, sezioni e prospetti durante il lavoro.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            Nel rilievo architettonico, piante e sezioni devono essere geometricamente coerenti:
+            un muro in pianta deve corrispondere esattamente alla parete nella sezione, e la
+            quota del davanzale in sezione deve coincidere con il bordo della finestra in pianta.
+            Verificare questa coerenza richiede di confrontare oggetti che si trovano su viste
+            diverse, orientate in direzioni diverse.
+          </p>
+          <p>
+            Il comando <span class="cmd">CPB</span> risolve questo problema creando un
+            <strong>blocco di controllo</strong>: una copia di tutti gli oggetti della vista
+            di partenza, riposizionata nella vista di destinazione con la rotazione geometrica
+            corretta. Il blocco è inserito nella vista target come elemento sovrapposto: se
+            linee e spigoli del blocco coincidono con il disegno della vista target, l'allineamento
+            è corretto. Se ci sono scostamenti, si individua immediatamente dove e di quanto.
+          </p>
+
+          <h2>Nome e aggiornamento del blocco</h2>
+          <p>
+            Ogni blocco di controllo viene nominato automaticamente con il formato:
+            <code>DraftCP_Ctrl_NomePartenza-NomeDestinazione</code>
+            (es. <code>DraftCP_Ctrl_01.Pianta_piano_terreno-03.Sezione_A-A'</code>).
+            Il nome è univoco per ogni coppia di viste.
+          </p>
+          <p>
+            Se il blocco per quella coppia esiste già nel disegno (perché il comando era stato
+            eseguito in precedenza), richiamare <span class="cmd">CPB</span> con le stesse
+            viste aggiorna automaticamente il blocco con le modifiche apportate nel frattempo
+            alla vista di partenza. Non occorre eliminare il vecchio blocco prima di rieseguire.
+          </p>
+
+          <h2>Cosa viene copiato e cosa no</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo di oggetto</th>
+                <th>Incluso nel blocco?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linee, polilinee, archi</td>
+                <td>&#x2705; Sì</td>
+              </tr>
+              <tr>
+                <td>Testi e quote</td>
+                <td>&#x2705; Sì</td>
+              </tr>
+              <tr>
+                <td>Blocchi di porte e finestre</td>
+                <td>&#x2705; Sì</td>
+              </tr>
+              <tr>
+                <td>Linee di sezione (<code>LineaSezioneDraftCP</code>)</td>
+                <td>&#x2705; Sì</td>
+              </tr>
+              <tr>
+                <td>Blocchi di controllo già esistenti</td>
+                <td>&#x274C; No (evita nidificazione)</td>
+              </tr>
+              <tr>
+                <td>Nuvola di punti</td>
+                <td>&#x274C; No</td>
+              </tr>
+              <tr>
+                <td>Viewport</td>
+                <td>&#x274C; No</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            I layer degli oggetti all'interno del blocco vengono automaticamente convertiti
+            dal suffisso della vista di partenza a quello della vista di destinazione.
+            Ad esempio, un oggetto su <code>0.4_01.Pianta_piano_terreno</code> diventa
+            <code>0.4_03.Sezione_A-A'</code> nel blocco di controllo inserito sulla sezione.
+            Questo fa sì che il blocco rispetti la visibilità e i colori della vista di destinazione.
+          </p>
+
+          <h2>Come avviare il comando</h2>
+          <p>Digitare <span class="cmd">CPB</span> oppure cliccare <strong>Blocchi di Controllo</strong> nella
+            Dashboard.
+            Si apre la finestra di configurazione:</p>
+
+          <div class="media-md">
+            <img src="Sezione_09_CpBlocchi_OCG/cpb_finestra_configurazione.png"
+              alt="La finestra DraftCP - Creazione Blocco Controllo con le due liste affiancate">
+            <p class="media-caption">La finestra con le due liste: a sinistra la Vista di Partenza (sorgente), a destra
+              la
+              Vista di Destinazione (target). Nell'esempio, la pianta del piano terreno verrà copiata sulla pianta del
+              piano primo.</p>
+          </div>
+
+          <h2>Flusso operativo</h2>
+          <ol class="steps-list">
+            <li>Digitare <span class="cmd">CPB</span> o cliccare <strong>Blocchi di Controllo</strong> nella Dashboard.
+            </li>
+            <li>Nella lista di sinistra (<strong>Vista di Partenza</strong>), selezionare la vista da copiare.</li>
+            <li>Nella lista di destra (<strong>Vista di Destinazione</strong>), selezionare la vista su cui incollare il
+              blocco.</li>
+            <li>Cliccare <strong>"Crea Blocco"</strong>.</li>
+            <li>Il blocco viene creato, inserito nella vista di destinazione con la rotazione geometrica corretta e
+              quella
+              vista viene resa corrente automaticamente.</li>
+          </ol>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Caso d'uso tipico: verifica pianta–sezione</strong>
+              Selezionare come vista di partenza la <em>Pianta del Piano Terreno</em> e come
+              destinazione la <em>Sezione A-A'</em>. Il blocco di controllo proietta la pianta
+              sull'asse verticale della sezione: le pareti della pianta devono coincidere con le
+              linee verticali della sezione. Ogni disallineamento indica una discrepanza da correggere.
+            </div>
+          </div>
+
+          <div class="callout warning">
+            <span class="callout-icon">&#x26A0;&#xFE0F;</span>
+            <div class="callout-content">
+              <strong>Prerequisito: viste create con CPV</strong>
+              Il comando <span class="cmd">CPB</span> funziona correttamente solo se le viste
+              sono state create con <span class="cmd">CPV</span>. La struttura dei layer
+              (con suffisso della vista) è indispensabile per la conversione automatica
+              dei layer all'interno del blocco.
+            </div>
+          </div>
+
+          <h2>Video tutorial</h2>
+          <div class="media-block">
+            <video controls preload="metadata">
+              <source src="Sezione_09_CpBlocchi_OCG/demo_cpblocchi.mp4" type="video/mp4">
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+            <p class="media-caption">Tutorial: creazione di un blocco di controllo dalla pianta verso la sezione, con
+              verifica dell'allineamento geometrico</p>
+          </div>
+        </section>
+        <section class="doc-section" id="sec10">
+          <span class="section-tag">Sezione 10</span>
+          <h1 class="section-title">Eliminazione Viste <span class="cmd">DELV</span></h1>
+          <p class="section-lead">
+            Rimuove una vista dal progetto in modo sicuro e completo, eliminando tutti gli
+            oggetti ad essa associati, i layer, l'UCS e il blocco linea di sezione.
+            Le viste rimanenti vengono rinumerate automaticamente per mantenere la sequenza coerente.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            Eliminare manualmente una vista da AutoCAD richiederebbe di cancellare a mano
+            decine di layer, l'UCS, il filtro gruppo e tutti gli oggetti grafici —
+            con il rischio di lasciare residui che compromettono il funzionamento dei
+            comandi successivi. Il comando <span class="cmd">DELV</span> esegue questa
+            pulizia in modo atomico e verificato.
+          </p>
+
+          <p>Cosa viene eseguito automaticamente:</p>
+          <ul>
+            <li>
+              Gli <strong>oggetti grafici</strong> nei layer della vista vengono spostati
+              in una <strong>definizione di blocco</strong> denominata
+              <code>ViewDelete_yymoddhhmmss_NomeVista</code> (es. <code>ViewDelete_260701143022_Sezione_A-A'</code>).
+              Il blocco è sempre accessibile dall'Editor di Blocchi di AutoCAD e conserva
+              tutto il disegno della vista eliminata a scopo di recupero o consultazione.
+            </li>
+            <li>
+              I <strong>layer della vista</strong> vengono <em>rinominati</em> togliendo
+              il suffisso del nome (es. <code>0.4_Sezione_A-A'</code> diventa <code>0.4</code>).
+              Non vengono eliminati: i layer "puliti" restano disponibili nel disegno.
+            </li>
+            <li>Il <strong>filtro gruppo layer</strong> associato alla vista viene rimosso.</li>
+            <li>L'<strong>UCS associato</strong> (es. <code>03.Sezione_A-A'</code>) viene eliminato.</li>
+            <li>Il <strong>blocco linea di sezione</strong> sulla pianta (se presente) viene eliminato.</li>
+            <li>La <strong>voce nella tabella viste</strong> di AutoCAD viene eliminata.</li>
+          </ul>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Rinumerazione automatica</strong>
+              Dopo l'eliminazione, tutte le viste successive vengono rinominate automaticamente
+              per mantenere la sequenza numerica continua. Ad esempio, eliminando
+              <code>03.Sezione_A-A'</code>, la vecchia <code>04.Sezione_B-B'</code> diventa
+              <code>03.Sezione_B-B'</code> e così via.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Il disegno non si perde</strong>
+              Gli oggetti della vista eliminata non vengono cancellati: sono conservati nella
+              definizione di blocco <code>ViewDelete_…</code> all'interno del file DWG.
+              Per visualizzarli, aprire il comando <strong>Editor di Blocchi</strong>
+              (<kbd>BEDIT</kbd>) e selezionare il blocco corrispondente dalla lista.
+              Il blocco rimane nel disegno fino alla prossima esportazione finale con
+              <span class="cmd">CPE</span> (o fino a quando non viene eliminato manualmente).
+            </div>
+          </div>
+
+          <h2>Come avviare il comando</h2>
+          <p>Digitare <span class="cmd">DELV</span> oppure cliccare <strong>Eliminazione Viste</strong> nella Dashboard.
+            Si apre la finestra di selezione:</p>
+
+          <div class="media-sm">
+            <img src="Sezione_10_DelViste_OCG/delv_lista_viste.png"
+              alt="La finestra DraftCP - Elimina Vista con la lista delle viste selezionabili">
+            <p class="media-caption">La finestra di selezione mostra tutte le viste presenti nel progetto. Selezionare
+              quella da eliminare e cliccare "Elimina Vista".</p>
+          </div>
+
+          <h2>Flusso operativo</h2>
+          <ol class="steps-list">
+            <li>Digitare <span class="cmd">DELV</span> o cliccare <strong>Eliminazione Viste</strong> nella Dashboard.
+            </li>
+            <li>Selezionare dalla lista la <strong>vista da eliminare</strong> (un click sul nome la evidenzia).</li>
+            <li>Cliccare il pulsante <strong>"Elimina Vista"</strong>.</li>
+            <li>Nella finestra di conferma, cliccare <strong>"Sì"</strong> per procedere oppure <strong>"No"</strong>
+              per
+              annullare.</li>
+          </ol>
+
+          <div class="media-sm">
+            <img src="Sezione_10_DelViste_OCG/delv_conferma_cancellazione.png"
+              alt="La finestra di conferma dell'eliminazione della vista selezionata">
+            <p class="media-caption">La finestra di conferma: il nome della vista viene mostrato nel messaggio per
+              evitare
+              eliminazioni accidentali.</p>
+          </div>
+
+          <div class="callout danger">
+            <span class="callout-icon">&#x1F6A8;</span>
+            <div class="callout-content">
+              <strong>Operazione irreversibile</strong>
+              L'eliminazione di una vista cancella definitivamente tutti gli oggetti grafici
+              contenuti nei suoi layer. Non è possibile annullare l'operazione con
+              <kbd>Ctrl</kbd>+<kbd>Z</kbd> dopo la conferma. Verificare di aver selezionato
+              la vista corretta prima di procedere.
+            </div>
+          </div>
+
+          <h2>Video tutorial</h2>
+          <div class="media-block">
+            <video controls preload="metadata">
+              <source src="Sezione_10_DelViste_OCG/demo_delviste.mp4" type="video/mp4">
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+            <p class="media-caption">Tutorial: eliminazione di una vista con rinumerazione automatica delle viste
+              rimanenti</p>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Quando usare DELV</strong>
+              Il caso d'uso più comune è la correzione di un errore nella fase di creazione viste:
+              se si è creata una sezione con direzione sbagliata o un nome errato,
+              è sufficiente eliminarla con <span class="cmd">DELV</span> e ricrearla con
+              <span class="cmd">CPV</span>. La rinumerazione automatica mantiene la
+              coerenza del progetto senza necessità di interventi manuali.
+            </div>
+          </div>
+        </section>
+        <!-- ════════════════ SEZIONE 11 — VISIBILITA' NUVOLA (B) ════════════════ -->
+        <section class="doc-section" id="sec11">
+          <span class="section-tag">Sezione 11</span>
+          <h1 class="section-title">Visibilità Nuvola di Punti <span class="cmd">B</span></h1>
+          <p class="section-lead">
+            Accende e spegne istantaneamente la nuvola di punti con un solo tasto.
+            Il comando più rapido dell'applicazione: nessuna finestra, nessuna selezione,
+            nessuna conferma richiesta.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            La nuvola di punti è l'elemento di riferimento fondamentale per il rilievo,
+            ma la sua presenza rallenta la visualizzazione grafica e può rendere
+            difficile leggere il disegno in avanzamento. È prassi comune alternarla
+            continuamente: accesa per tracciare, spenta per verificare il disegno.
+          </p>
+          <p>
+            Oltre ad accendere/spegnere la visibilità, il comando svolge una seconda
+            funzione di verifica: controlla che la nuvola di punti sia assegnata al
+            layer corretto (<code>CloudWorx Use (Do not change)</code>). Se non lo è,
+            la sposta automaticamente sul layer giusto. Questo è pensato in particolare
+            per chi lavora con il plugin Leica <strong>CloudWorx</strong>, dove può
+            capitare inavvertitamente di spostare la nuvola su un layer sbagliato.
+          </p>
+
+          <h2>Come funziona</h2>
+          <p>Digitare <span class="cmd">B</span> e premere <kbd>Invio</kbd> (o <kbd>Spazio</kbd>). Il comando si esegue
+            immediatamente: se la nuvola era visibile la spegne, se era spenta la riaccende.</p>
+          <p>La riga di comando mostra un messaggio che conferma l'operazione eseguita.</p>
+
+          <div class="media-block">
+            <img src="Sezione_11_B_visibil_nuvola/b_nuvola_accesa.png"
+              alt="AutoCAD con la nuvola di punti accesa durante il disegno">
+            <p class="media-caption">Nuvola di punti visibile: i punti colorati mostrano la geometria dell'edificio
+              rilevato, usata come riferimento per il tracciamento</p>
+          </div>
+
+          <div class="media-block">
+            <img src="Sezione_11_B_visibil_nuvola/b_nuvola_spenta.png"
+              alt="AutoCAD con la nuvola di punti spenta: si vede solo il disegno CAD">
+            <p class="media-caption">Nuvola spenta: il disegno CAD è perfettamente leggibile senza la sovrapposizione
+              dei
+              punti. La riga di comando conferma: "La nuvola è stata spenta e congelata"</p>
+          </div>
+
+          <h2>Messaggi della riga di comando</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Messaggio</th>
+                <th>Significato</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>L'oggetto nuvola controllato ha già attribuito il layer corretto</code></td>
+                <td>La nuvola era già sul layer giusto, nessuna correzione necessaria.</td>
+              </tr>
+              <tr>
+                <td><code>La nuvola è visibile</code></td>
+                <td>Stato iniziale rilevato: la nuvola era accesa prima dell'esecuzione del comando.</td>
+              </tr>
+              <tr>
+                <td><code>La nuvola è stata spenta e congelata</code></td>
+                <td>La nuvola è ora invisibile. Il layer è stato congelato per massimizzare le prestazioni grafiche.
+                </td>
+              </tr>
+              <tr>
+                <td><code>La nuvola è stata accesa e scongelata</code></td>
+                <td>La nuvola è ora nuovamente visibile.</td>
+              </tr>
+              <tr>
+                <td><code>La nuvola è stata spostata sul layer corretto</code></td>
+                <td>La nuvola era su un layer errato: è stata corretta automaticamente.</td>
+              </tr>
+              <tr>
+                <td><code>Nessuna nuvola di punti trovata nel disegno</code></td>
+                <td>Non è presente alcuna nuvola di punti nel file DWG aperto.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Perché si chiama "B"?</strong>
+              Come per <span class="cmd">AC</span>, il nome è scelto per la velocità.
+              La lettera <kbd>B</kbd> si trova accanto alla barra spaziatrice: si preme
+              con l'indice della mano sinistra, e la barra spaziatrice con il pollice
+              nella stessa mano, in un unico gesto fluido. È il comando più rapido
+              dell'applicazione.
+            </div>
+          </div>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Compatibilità con le nuvole di punti</strong>
+              Il comando è progettato per funzionare con le nuvole di punti inserite
+              tramite <strong>Autodesk ReCap</strong> (formato <code>.rcp</code> / <code>.rcs</code>)
+              e con il plugin <strong>Leica CloudWorx</strong>. Se si utilizza un altro
+              metodo di importazione, il layer di riferimento potrebbe essere diverso.
+            </div>
+          </div>
+        </section>
+        <!-- ════════════════ SEZIONE 12 — ESPORTAZIONE FINALE (CPE) ════════════════ -->
+        <section class="doc-section" id="sec12">
+          <span class="section-tag">Sezione 12</span>
+          <h1 class="section-title">Esportazione Finale <span class="cmd">CPE</span></h1>
+          <p class="section-lead">
+            Raccoglie automaticamente tutti gli oggetti di tutte le viste, li dispone in
+            un layout bidimensionale ordinato su una "tavola virtuale" e li salva in un
+            nuovo file DWG pulito, pronto per la consegna. Il disegno originale rimane
+            intatto.
+          </p>
+
+          <h2>A cosa serve</h2>
+          <p>
+            Il file DWG di lavoro usato durante il rilievo ha una struttura complessa:
+            decine di layer con suffissi di vista, UCS multipli, blocchi di controllo,
+            la nuvola di punti collegata. Non è un elaborato consegnabile al committente.
+            Il comando <span class="cmd">CPE</span> estrae da questo file solo gli oggetti
+            utili, li riorganizza in una tavola standard e genera un file DWG separato,
+            con layer puliti e generici, adatto alla consegna.
+          </p>
+          <p>
+            Il file originale non viene mai modificato: l'esportazione lavora interamente
+            in memoria (protetta da un blocco UNDO) e salva il risultato con
+            <code>_WBLOCK</code> in un nuovo file. Al termine, il disegno corrente viene
+            ripristinato automaticamente tramite UNDO.
+          </p>
+
+          <h2>Come avviare il comando</h2>
+          <p>Digitare <span class="cmd">CPE</span> oppure cliccare <strong>Esportazione Finale</strong> nella Dashboard.
+            Il comando non apre finestre di dialogo: inizia immediatamente l'elaborazione e notifica il progresso nella
+            riga di comando.</p>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Prima di esportare: controlla lo Stato Viste</strong>
+              Aprire la Dashboard (<span class="cmd">CPD</span>) e verificare il box
+              <strong>Stato Viste</strong>. Le viste con <strong>[ VUOTA ]</strong> non
+              contengono disegno e verranno escluse dall'esportazione. Solo le viste
+              con <strong>[ OK ]</strong> vengono incluse nel file esportato.
+            </div>
+          </div>
+
+          <div class="media-sm">
+            <img src="Sezione_12_CpExpViste_OCG/lista_viste_dashboard.png"
+              alt="Il box Stato Viste nella Dashboard con indicatori OK e VUOTA">
+            <p class="media-caption">Il box Stato Viste nella Dashboard prima dell'esportazione: le viste con [ OK ]
+              saranno incluse, quelle con [ VUOTA ] escluse.</p>
+          </div>
+
+          <h2>Il layout di esportazione</h2>
+          <p>
+            Gli oggetti delle viste vengono disposti su una tavola virtuale bidimensionale
+            in due righe:
+          </p>
+          <ul>
+            <li>
+              <strong>Riga superiore — Piante</strong> (viste orizzontali): disposte affiancate
+              orizzontalmente con una distanza di <strong>20 metri</strong> tra l'una e l'altra,
+              nell'ordine numerico originale.
+            </li>
+            <li>
+              <strong>Riga inferiore — Sezioni e Prospetti</strong> (viste verticali): disposte
+              anch'esse affiancate con una distanza di <strong>10 metri</strong> tra ciascuna,
+              a <strong>30 metri</strong> sotto la riga delle piante.
+            </li>
+          </ul>
+          <p>
+            Su ogni vista esportata vengono aggiunti automaticamente:
+          </p>
+          <ul>
+            <li>Un <strong>testo con il nome della vista</strong> posizionato in alto a sinistra</li>
+            <li>Un <strong>punto sull'origine degli assi</strong> (layer <code>Riferimenti</code>, colore 40) per
+              facilitare il posizionamento in altri disegni</li>
+          </ul>
+          <p>
+            L'intera composizione è racchiusa in un <strong>cartiglio rettangolare</strong>
+            (layer <code>Cartiglio</code>) con il nome del file DWG originale come etichetta.
+          </p>
+
+          <div class="media-block">
+            <img src="Sezione_12_CpExpViste_OCG/risultato_finale.png"
+              alt="Il file DWG esportato con piante nella riga superiore e sezioni in quella inferiore">
+            <p class="media-caption">Il risultato dell'esportazione: 3 piante nella riga superiore e 2 sezioni in quella
+              inferiore, ciascuna con il nome in alto a sinistra. Il rettangolo rosso è il cartiglio che delimita la
+              tavola.</p>
+          </div>
+
+          <h2>Pulizia e unificazione dei layer</h2>
+          <p>
+            Nel file esportato, i layer vengono rinominati togliendo il suffisso della vista:
+            <code>0.4_01.Pianta_piano_terreno</code> diventa semplicemente <code>0.4</code>,
+            <code>0.3_03.Sezione_A-A'</code> diventa <code>0.3</code>, e così via.
+            Il risultato è un disegno con layer standard e puliti, indipendente dalla struttura
+            interna del file di lavoro.
+          </p>
+          <p>
+            Gli oggetti che non appartengono alle viste — blocchi di controllo (<code>DraftCP_Ctrl_…</code>),
+            la nuvola di punti, e i blocchi delle viste eliminate (<code>ViewDelete_…</code>)
+            — vengono automaticamente esclusi dall'esportazione.
+          </p>
+
+          <h2>Nome e percorso del file esportato</h2>
+          <p>
+            Il file viene salvato nella <strong>stessa cartella del disegno originale</strong>
+            con il nome nel formato:
+          </p>
+          <p
+            style="text-align:center; font-family: monospace; font-size: 1rem; padding: 12px; background: rgba(0,0,0,.3); border-radius: 8px; margin: 16px 0;">
+            NomeFileOriginale<strong>_exp_</strong>YYMODDHHMMSS<strong>.dwg</strong>
+          </p>
+          <p>
+            Il timestamp garantisce che ogni esportazione generi un file con nome univoco,
+            senza sovrascrivere le versioni precedenti. Ad esempio:
+            <code>RilievoVilla_exp_260702140530.dwg</code>
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Il file originale non viene modificato</strong>
+              L'esportazione opera interamente in memoria tramite un blocco UNDO protetto.
+              Al termine (con successo o in caso di errore), il file corrente viene ripristinato
+              automaticamente allo stato precedente. Non è necessario salvare manualmente
+              dopo l'esportazione.
+            </div>
+          </div>
+
+          <div class="callout warning">
+            <span class="callout-icon">&#x26A0;&#xFE0F;</span>
+            <div class="callout-content">
+              <strong>Non interrompere durante l'elaborazione</strong>
+              Non premere <kbd>Esc</kbd> né digitare altri comandi mentre
+              <span class="cmd">CPE</span> è in esecuzione. Il comando gestisce
+              internamente gli errori e ripristina il disegno, ma un'interruzione
+              forzata potrebbe lasciare il file in uno stato intermedio.
+            </div>
+          </div>
+
+          <h2>Video tutorial</h2>
+          <div class="media-block">
+            <video controls preload="metadata">
+              <source src="Sezione_12_CpExpViste_OCG/demo_cpexpviste.mp4" type="video/mp4">
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+            <p class="media-caption">Tutorial: esportazione finale di un progetto con 3 piante e 2 sezioni nel file DWG
+              consegnabile</p>
+          </div>
+        </section>
+        <!-- ════════════════ SEZIONE 13 — DOMANDE FREQUENTI (FAQ) ════════════════ -->
+        <section class="doc-section" id="sec13">
+          <span class="section-tag">Sezione 13</span>
+          <h1 class="section-title">Domande Frequenti e Risoluzione Problemi</h1>
+          <p class="section-lead">
+            Raccolta delle domande più comuni e dei problemi riscontrati durante l'uso
+            di DraftCP, con le relative soluzioni.
+          </p>
+
+          <h2>Problemi di avvio e licenza</h2>
+
+          <details class="faq-item">
+            <summary>Il comando CPD non viene riconosciuto da AutoCAD</summary>
+            <div class="faq-body">
+              <p>Verificare di aver installato correttamente il plugin. Provare a riavviare AutoCAD e
+                se il problema persiste contattare l'assistenza.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Il messaggio "Licenza non valida" appare all'avvio di un comando</summary>
+            <div class="faq-body">
+              <p>La licenza è legata al codice hardware del computer (MAC address). Cause possibili:</p>
+              <ul>
+                <li>Il software è stato installato su un computer diverso da quello registrato.</li>
+                <li>La scheda madre è stata sostituita.</li>
+                <li>La licenza è scaduta.</li>
+              </ul>
+              <p>Contattare il supporto tecnico fornendo il <strong>codice macchina</strong>
+                mostrato nella finestra di attivazione</p>
+            </div>
+          </details>
+
+          <h2>Problemi con le viste</h2>
+
+          <details class="faq-item">
+            <summary>CPV non trova l'UCS corretto per la sezione</summary>
+            <div class="faq-body">
+              <p>Il comando <span class="cmd">CPV</span> usa l'UCS corrente per definire
+                l'orientamento della vista. Prima di creare una sezione, assicurarsi di
+                aver impostato l'UCS della sezione con <span class="cmd">CPS</span> e di
+                essere in tale UCS quando si lancia CPV.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Dopo DELV le viste non sono rinomerate correttamente</summary>
+            <div class="faq-body">
+              <p>La rinumerazione automatica di <span class="cmd">DELV</span> aggiorna i nomi
+                dei layer e degli UCS, ma non rinomina retroattivamente i blocchi di controllo
+                già creati con <span class="cmd">CPB</span>. Eliminare i blocchi di controllo
+                obsoleti manualmente (con il comando <kbd>BEDIT</kbd> → elimina definizione)
+                e ricrearli con CPB.</p>
+            </div>
+          </details>
+
+          <h2>Problemi con il tracciamento dei muri</h2>
+
+          <details class="faq-item">
+            <summary>CPM non rettifica i muri: le linee rimangono come le ho cliccate</summary>
+            <div class="faq-body">
+              <p>La rettifica viene applicata solo se il punto cliccato è entro le tolleranze
+                impostate. Se i punti sono troppo lontani dalle linee rette ortogonali (distanza
+                superiore alla Tolleranza Distanza, oppure angolo superiore alla Tolleranza Angolare),
+                la rettifica fallisce e il muro viene tracciato esattamente sui punti cliccati.</p>
+              <p>Soluzione: aprire i parametri con <kbd>T</kbd> prima di cliccare e aumentare
+                la Tolleranza Distanza o la Tolleranza Angolare.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>I giunti automatici di CPM non si chiudono correttamente</summary>
+            <div class="faq-body">
+              <p>L'unione automatica dei giunti cerca linee entro il <strong>raggio di ricerca</strong>
+                configurato. Se il muro esistente è oltre questo raggio, non viene trovato.
+                Aprire i parametri con <kbd>T</kbd> e aumentare il valore di
+                <em>"Raggio di ricerca unioni"</em> (es. da 80 a 150 cm).
+              </p>
+              <p>Nota: un raggio troppo grande può causare unioni indesiderate con muri
+                lontani. Il valore ottimale dipende dalla scala del progetto.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>CPF o CPP non riconoscono le linee del muro al click</summary>
+            <div class="faq-body">
+              <p>I comandi cercano entità di tipo <strong>LINE</strong> nelle vicinanze
+                del punto cliccato. Possibili cause:</p>
+              <ul>
+                <li>Il muro è composto da <strong>polilinee</strong> anziché linee semplici:
+                  esplodere le polilinee con <kbd>ESPLODI</kbd> prima di usare CPF/CPP.</li>
+                <li>Il click è troppo lontano dalla linea del muro: usare gli <em>Osnap</em>
+                  attivi (Nearest, On) per agganciare il punto sulla linea.</li>
+                <li>Il layer del muro è congelato o disattivato: verificare nella palette layer.</li>
+              </ul>
+            </div>
+          </details>
+
+          <h2>Problemi con l'esportazione</h2>
+
+          <details class="faq-item">
+            <summary>CPE non genera il file o genera un file vuoto</summary>
+            <div class="faq-body">
+              <p>Verificare nella Dashboard (box <strong>Stato Viste</strong>) che almeno
+                una vista abbia stato <strong>[ OK ]</strong>. Se tutte le viste mostrano
+                <strong>[ VUOTA ]</strong>, il file esportato non conterrà oggetti.
+              </p>
+              <p>Controllare anche che il disegno sia salvato nella cartella corretta e che
+                il percorso non contenga caratteri speciali che potrebbero interferire con
+                il salvataggio del file <code>_exp_</code>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Nel file esportato i layer hanno ancora il suffisso della vista</summary>
+            <div class="faq-body">
+              <p>La pulizia dei layer avviene solo sugli oggetti esportati tramite
+                <span class="cmd">CPE</span>. Se nel file esportato si vedono layer con
+                suffisso, alcuni oggetti erano su layer non gestiti da DraftCP (es. layer
+                creati manualmente senza il suffisso standard). Rinominarli manualmente
+                nel file esportato.
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <!-- ════════════════ SEZIONE 14 — RIFERIMENTI TECNICI ════════════════ -->
+        <section class="doc-section" id="sec14">
+          <span class="section-tag">Sezione 14</span>
+          <h1 class="section-title">Riferimenti Tecnici</h1>
+          <p class="section-lead">
+            Riepilogo di tutti i comandi, la struttura dei layer, le variabili globali
+            persistenti e i file del pacchetto DraftCP.
+          </p>
+
+          <h2>Elenco comandi</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Comando</th>
+                <th>Funzione</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="cmd">CPD</span></td>
+                <td>Apre la Dashboard principale</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPS</span></td>
+                <td>Imposta l'UCS della sezione/pianta</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPV</span></td>
+                <td>Crea una nuova vista (pianta o sezione)</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">AC</span></td>
+                <td>Attiva la vista corrente (Navigate)</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">TRLV</span></td>
+                <td>Trasla una vista</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPM</span></td>
+                <td>Traccia muri a due linee dalla nuvola</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPF</span></td>
+                <td>Inserisce finestre (semplici o complesse)</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPP</span></td>
+                <td>Inserisce porte interne con blocco dinamico</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPB</span></td>
+                <td>Crea blocchi di controllo tra viste</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">DELV</span></td>
+                <td>Elimina una vista in modo sicuro</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">B</span></td>
+                <td>Accende/spegne la nuvola di punti</td>
+              </tr>
+              <tr>
+                <td><span class="cmd">CPE</span></td>
+                <td>Esporta tutte le viste in un file DWG pulito</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Struttura dei layer</h2>
+          <p>DraftCP usa una convenzione di nominazione dei layer basata su <strong>prefisso di tipo</strong>
+            e <strong>suffisso di vista</strong>:</p>
+          <p
+            style="text-align:center; font-family:monospace; background:rgba(0,0,0,.3); padding:10px; border-radius:8px; margin:16px 0;">
+            PrefissoTipo_NumeroVista.NomeVista
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Prefisso</th>
+                <th>Tipo di oggetto</th>
+                <th>Esempio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>0.0</code></td>
+                <td>Layer ausiliario / dettagli</td>
+                <td><code>0.0_01.Pianta_piano_terreno</code></td>
+              </tr>
+              <tr>
+                <td><code>0.1</code></td>
+                <td>Serramenti / elementi meno importanti</td>
+                <td><code>0.1_01.Pianta_piano_terreno</code></td>
+              </tr>
+              <tr>
+                <td><code>0.2</code></td>
+                <td>Linee di prospetto</td>
+                <td><code>0.2_01.Pianta_piano_terreno</code></td>
+              </tr>
+              <tr>
+                <td><code>0.3</code></td>
+                <td>Linee ausiliarie / elementi sezionati meno importati</td>
+                <td><code>0.3_01.Pianta_piano_terreno</code></td>
+              </tr>
+              <tr>
+                <td><code>0.4</code></td>
+                <td>Muri sezionati e strutture principali</td>
+                <td><code>0.4_01.Pianta_piano_terreno</code></td>
+              </tr>
+              <tr>
+                <td><code>CloudWorx Use</code></td>
+                <td>Nuvola di punti (Leica)</td>
+                <td><code>CloudWorx Use (Do not change)</code></td>
+              </tr>
+              <tr>
+                <td><code>Riferimenti</code></td>
+                <td>Origini e punti esportazione</td>
+                <td><code>Riferimenti</code></td>
+              </tr>
+              <tr>
+                <td><code>Cartiglio</code></td>
+                <td>Bordo tavola esportata</td>
+                <td><code>Cartiglio</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Variabili globali principali</h2>
+          <p>I parametri configurati dall'utente vengono salvati nel <strong>Registro di Windows</strong>
+            sotto la chiave <code>HKCU\Software\DraftCP_OCG</code> e sono mantenuti tra una sessione e l'altra:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Variabile</th>
+                <th>Comando</th>
+                <th>Significato</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>*TolDist*</code></td>
+                <td>CPM</td>
+                <td>Tolleranza distanza muri (cm)</td>
+              </tr>
+              <tr>
+                <td><code>*TolAng*</code></td>
+                <td>CPM</td>
+                <td>Tolleranza angolare muri (gradi)</td>
+              </tr>
+              <tr>
+                <td><code>*TolSpessore*</code></td>
+                <td>CPM</td>
+                <td>Arrotondamento spessore muri (cm)</td>
+              </tr>
+              <tr>
+                <td><code>*AutoUnione*</code></td>
+                <td>CPM</td>
+                <td>Unione automatica giunti (T/nil)</td>
+              </tr>
+              <tr>
+                <td><code>*RaggioUnione*</code></td>
+                <td>CPM</td>
+                <td>Raggio di ricerca giunti (cm)</td>
+              </tr>
+              <tr>
+                <td><code>*cpa-fin-tipo*</code></td>
+                <td>CPF</td>
+                <td>Modalità finestra (semplice/complessa)</td>
+              </tr>
+              <tr>
+                <td><code>*cpa-fin-larg*</code></td>
+                <td>CPF</td>
+                <td>Ultima larghezza finestra usata</td>
+              </tr>
+              <tr>
+                <td><code>*cpa-por-arrotonda*</code></td>
+                <td>CPP</td>
+                <td>Arrotondamento larghezza porta (T/nil)</td>
+              </tr>
+              <tr>
+                <td><code>*cpa-por-arrotonda-valore*</code></td>
+                <td>CPP</td>
+                <td>Valore arrotondamento porta (cm)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Requisiti di sistema</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Requisito</th>
+                <th>Valore</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AutoCAD</td>
+                <td>2018 o superiore (con supporto VL/LISP)</td>
+              </tr>
+              <tr>
+                <td>Sistema operativo</td>
+                <td>Windows 10 / 11 (64 bit)</td>
+              </tr>
+              <tr>
+                <td>Nuvola di punti</td>
+                <td>Autodesk ReCap (.rcp/.rcs) o Leica CloudWorx</td>
+              </tr>
+              <tr>
+                <td>Unità di misura</td>
+                <td>metriche (il software si adatta automaticamente)</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span>Copyright &copy; 2026 Geom. Olivero Cristian &mdash; Tutti i diritti riservati.</span>
+    <span><a href="eula.html">Licenza d'uso</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></span>
+  </footer>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <script>
+    // ── Hamburger / Sidebar drawer ──────────────────────────────
+    (function () {
+      var btn = document.getElementById('menuBtn');
+      var sidebar = document.querySelector('.sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      if (!btn || !sidebar || !overlay) return;
+
+      function openMenu() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      btn.addEventListener('click', function () {
+        sidebar.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      overlay.addEventListener('click', closeMenu);
+
+      // Close when a nav link is clicked (smooth scroll on same page)
+      sidebar.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
+</body>
+
+</html>

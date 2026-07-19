@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Informativa sulla Privacy di DraftCP — come vengono raccolti e trattati i dati personali.">
+  <title>DraftCP — Informativa sulla Privacy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <button class="hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <img src="Sezione_00_Home_page/logo_draftcp.png" alt="DraftCP Logo" class="header-logo">
+    <span class="header-title">Informativa sulla Privacy</span>
+    <span class="header-version">v1.0 — Luglio 2026</span>
+    <nav class="header-links">
+      <a href="index.html">← Manuale</a>
+      <a href="eula.html">Licenza d'uso</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <div class="sidebar-section-label">Indice Privacy</div>
+        <ul>
+          <li><a href="#priv-intro"><span class="nav-icon">📌</span> Introduzione</a></li>
+          <li><a href="#priv-titolare"><span class="nav-icon">👤</span> Titolare del Trattamento</a></li>
+          <li><a href="#priv-dati"><span class="nav-icon">🔍</span> Dati Raccolti</a></li>
+          <li><a href="#priv-finalita"><span class="nav-icon">🎯</span> Finalità del Trattamento</a></li>
+          <li><a href="#priv-base"><span class="nav-icon">⚖️</span> Base Giuridica</a></li>
+          <li><a href="#priv-conservazione"><span class="nav-icon">🗄️</span> Conservazione</a></li>
+          <li><a href="#priv-destinatari"><span class="nav-icon">🔗</span> Destinatari</a></li>
+          <li><a href="#priv-diritti"><span class="nav-icon">✅</span> Diritti dell'Utente</a></li>
+          <li><a href="#priv-sicurezza"><span class="nav-icon">🛡️</span> Sicurezza</a></li>
+          <li><a href="#priv-cookie"><span class="nav-icon">🍪</span> Cookie e Tecnologie</a></li>
+          <li><a href="#priv-modifiche"><span class="nav-icon">📝</span> Modifiche</a></li>
+        </ul>
+        <div class="sidebar-section-label">Documenti correlati</div>
+        <ul>
+          <li><a href="index.html"><span class="nav-icon">📖</span> Manuale Utente</a></li>
+          <li><a href="eula.html"><span class="nav-icon">📜</span> Licenza d'uso (EULA)</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="doc-section" id="priv-intro" style="margin-bottom:40px; padding-bottom:30px;">
+        <span class="section-tag">Documento Legale</span>
+        <h1 class="section-title">Informativa sulla Privacy</h1>
+        <p class="section-lead">
+          La presente Informativa descrive come DraftCP raccoglie, utilizza e protegge i dati
+          relativi all'Utente, in conformità al Regolamento (UE) 2016/679 (GDPR) e alla
+          normativa italiana vigente in materia di protezione dei dati personali.
+        </p>
+        <div class="callout note">
+          <span class="callout-icon">📌</span>
+          <div class="callout-content">
+            <strong>Chiarimento importante</strong>
+            DraftCP è un'applicazione desktop che opera <strong>esclusivamente in locale</strong>
+            sul PC dell'Utente. Non raccoglie dati di utilizzo, non invia statistiche e non accede
+            ai file di progetto AutoCAD. L'unico dato trasmesso all'esterno è il Codice Macchina,
+            utilizzato esclusivamente per la verifica della licenza d'uso.
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="priv-titolare">
+        <h2>Titolare del Trattamento</h2>
+        <p>Il Titolare del trattamento dei dati è:</p>
+        <div class="callout note">
+          <span class="callout-icon">👤</span>
+          <div class="callout-content">
+            <strong>Geom. Olivero Cristian</strong><br>
+            Sviluppatore O.C.G. — DraftCP<br>
+            Per contatti e richieste relative alla privacy, utilizzare il pulsante
+            "Segnalazione Bug" nella Dashboard di DraftCP, che genera automaticamente
+            un'email precompilata all'indirizzo dello sviluppatore.
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="priv-dati">
+        <h2>Dati Raccolti</h2>
+        <p>DraftCP raccoglie esclusivamente il seguente dato:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Dato</th>
+              <th>Natura</th>
+              <th>Come viene generato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Codice Macchina</strong></td>
+              <td>Identificativo hardware pseudonimizzato</td>
+              <td>Calcolato automaticamente dall'app a partire dall'UUID della scheda madre tramite algoritmo hash DJB2
+                non invertibile</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div class="callout-content">
+            <strong>Dato pseudonimizzato, non personale</strong>
+            Il Codice Macchina è un numero a 10 cifre (es. <code>3330583821</code>) che
+            <strong>non consente in nessun modo di risalire all'identità dell'Utente</strong>,
+            al nome del PC, all'azienda o ad altri dati identificativi. L'UUID originale della
+            scheda madre non viene mai trasmesso né conservato al di fuori del PC dell'Utente.
+          </div>
+        </div>
+
+        <p>DraftCP <strong>NON</strong> raccoglie:</p>
+        <ul>
+          <li>Nome, cognome, indirizzo email o altri dati anagrafici dell'Utente</li>
+          <li>Contenuto dei file DWG o dei progetti AutoCAD</li>
+          <li>Dati di utilizzo del software (comandi eseguiti, tempo di utilizzo, ecc.)</li>
+          <li>Dati di navigazione, cookie o identificatori di sessione</li>
+          <li>Indirizzi IP o informazioni sulla rete</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="priv-finalita">
+        <h2>Finalità del Trattamento</h2>
+        <p>Il Codice Macchina è trattato esclusivamente per le seguenti finalità:</p>
+        <ul>
+          <li><strong>Attivazione della Licenza d'uso:</strong> il Codice Macchina viene comunicato
+            dallo sviluppatore al database di licenza per abilitare l'utilizzo del Software su
+            quel specifico PC.</li>
+          <li><strong>Verifica periodica della validità della Licenza:</strong> il Software verifica
+            automaticamente, al massimo una volta al giorno, se la Licenza associata al Codice
+            Macchina del PC è ancora valida.</li>
+          <li><strong>Prevenzione dell'uso non autorizzato:</strong> il sistema impedisce l'utilizzo
+            del Software su macchine non autorizzate o in violazione del contratto di Licenza.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="priv-base">
+        <h2>Base Giuridica del Trattamento</h2>
+        <p>
+          Il trattamento del Codice Macchina trova la propria base giuridica nell'
+          <strong>esecuzione del contratto</strong> di licenza (art. 6, par. 1, lett. b del GDPR):
+          la verifica della licenza è una condizione tecnica necessaria per l'erogazione del servizio
+          (utilizzo del Software) per il quale l'Utente ha acquisito la Licenza.
+        </p>
+        <p>
+          Il dato viene trasmesso all'esterno solo su richiesta esplicita dell'Utente (tramite il
+          pulsante "Invia Richiesta Licenza via Email" nella finestra di attivazione), oppure in
+          modo automatico e pseudonimizzato durante la verifica periodica della licenza.
+        </p>
+      </section>
+
+      <section class="doc-section" id="priv-conservazione">
+        <h2>Conservazione dei Dati</h2>
+        <p>Il Codice Macchina è conservato in due luoghi distinti:</p>
+        <ul>
+          <li>
+            <strong>Sul PC dell'Utente:</strong> nel Registro di Sistema di Windows, alla chiave
+            <code>HKEY_CURRENT_USER\Software\DraftCP\License</code>. Questo dato è accessibile
+            e cancellabile dall'Utente stesso in qualsiasi momento tramite l'Editor del Registro.
+          </li>
+          <li>
+            <strong>Sul database del Licenziante:</strong> in un repository privato (GitHub Gist
+            privato) accessibile esclusivamente al Licenziante. Il dato viene conservato per la
+            durata del contratto di Licenza e cancellato su richiesta dell'Utente o alla scadenza
+            della Licenza stessa.
+          </li>
+        </ul>
+        <p>
+          Il Licenziante non condivide il database di licenza con terzi e non lo utilizza
+          per finalità diverse da quelle indicate nella presente Informativa.
+        </p>
+      </section>
+
+      <section class="doc-section" id="priv-destinatari">
+        <h2>Destinatari dei Dati</h2>
+        <p>Il Codice Macchina è accessibile esclusivamente al Licenziante (Geom. Olivero Cristian).</p>
+        <p>Il dato <strong>non viene ceduto, venduto o comunicato a terzi</strong> per nessun motivo,
+          salvo obbligo di legge o ordine dell'Autorità giudiziaria.</p>
+        <p>
+          Il servizio di hosting del database di licenza è fornito da <strong>GitHub, Inc.</strong>
+          (Microsoft Corporation) tramite la funzionalità GitHub Gist privato. GitHub agisce come
+          responsabile del trattamento nel rispetto delle proprie policy privacy (GDPR-compliant).
+        </p>
+      </section>
+
+      <section class="doc-section" id="priv-diritti">
+        <h2>Diritti dell'Utente</h2>
+        <p>
+          In qualità di interessato ai sensi del GDPR, l'Utente ha il diritto di:
+        </p>
+        <ul>
+          <li><strong>Accesso:</strong> ricevere conferma del trattamento e ottenere copia del dato conservato.</li>
+          <li><strong>Rettifica:</strong> richiedere la correzione di dati inesatti.</li>
+          <li><strong>Cancellazione ("diritto all'oblio"):</strong> richiedere la cancellazione del Codice Macchina dal
+            database del Licenziante. Si noti che la cancellazione comporta la disattivazione della Licenza sul PC
+            associato.</li>
+          <li><strong>Limitazione del trattamento:</strong> richiedere la sospensione del trattamento in attesa di
+            verifica.</li>
+          <li><strong>Portabilità:</strong> ricevere il proprio dato in formato leggibile da una macchina.</li>
+          <li><strong>Opposizione:</strong> opporsi al trattamento per motivi legittimi.</li>
+          <li><strong>Proporre reclamo:</strong> presentare un reclamo al Garante per la Protezione dei Dati Personali
+            (www.garanteprivacy.it).</li>
+        </ul>
+        <p>
+          Per esercitare i propri diritti, l'Utente può contattare il Titolare utilizzando il
+          pulsante "Segnalazione Bug" nella Dashboard di DraftCP (che apre una email precompilata
+          all'indirizzo dello sviluppatore), specificando nell'oggetto "Richiesta Privacy".
+        </p>
+      </section>
+
+      <section class="doc-section" id="priv-sicurezza">
+        <h2>Sicurezza dei Dati</h2>
+        <p>
+          Il Licenziante adotta misure tecniche e organizzative adeguate per proteggere
+          il Codice Macchina da accessi non autorizzati, divulgazione, alterazione o distruzione:
+        </p>
+        <ul>
+          <li>Il Codice Macchina è un hash non invertibile: dalla sua conoscenza non è possibile
+            risalire all'UUID originale della scheda madre né ad altri dati dell'Utente.</li>
+          <li>Il database di licenza è un repository privato accessibile solo con credenziali
+            personali del Licenziante.</li>
+          <li>Il registro di sistema locale è protetto dai meccanismi di sicurezza di Windows.</li>
+          <li>Il dato conservato nel registro è accompagnato da un hash di integrità che
+            rileva eventuali tentativi di manomissione.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="priv-cookie">
+        <h2>Cookie e Tecnologie di Tracciamento</h2>
+        <p>
+          DraftCP è un'applicazione desktop e <strong>non utilizza cookie, web beacon, pixel
+            di tracciamento</strong> o tecnologie analoghe.
+        </p>
+        <p>
+          Il presente manuale HTML è un documento statico locale che può essere consultato
+          offline. Qualora il documento venisse ospitato in futuro su un server web, verrà
+          pubblicata un'apposita Cookie Policy.
+        </p>
+      </section>
+
+      <section class="doc-section" id="priv-modifiche">
+        <h2>Modifiche all'Informativa</h2>
+        <p>
+          Il Licenziante si riserva il diritto di aggiornare la presente Informativa in qualsiasi
+          momento, in particolare a seguito di modifiche normative o dell'evoluzione del Software.
+          Le modifiche sostanziali saranno comunicate attraverso i canali ufficiali.
+        </p>
+        <p>
+          L'utilizzo continuato del Software dopo la pubblicazione delle modifiche costituisce
+          accettazione della nuova versione dell'Informativa.
+        </p>
+        <div class="callout note" style="margin-top:32px;">
+          <span class="callout-icon">📌</span>
+          <div class="callout-content">
+            <strong>Versione del documento</strong>
+            Informativa Privacy versione 1.0 — Data di emissione: Luglio 2026<br>
+            Titolare: Geom. Olivero Cristian &mdash; sviluppatore O.C.G.
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span>Copyright &copy; 2026 Geom. Olivero Cristian &mdash; Tutti i diritti riservati.</span>
+    <span>
+      <a href="index.html">Manuale Utente</a> &nbsp;·&nbsp;
+      <a href="eula.html">Licenza d'uso</a>
+    </span>
+  </footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script>
+  // ── Hamburger / Sidebar drawer ──────────────────────────────
+  (function () {
+    var btn     = document.getElementById('menuBtn');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    if (!btn || !sidebar || !overlay) return;
+
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('active');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', function () {
+      sidebar.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+
+    // Close when a nav link is clicked (smooth scroll on same page)
+    sidebar.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+</body>
+
+</html>

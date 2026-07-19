@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contratto di Licenza con l'Utente Finale (EULA) di DraftCP.">
+  <title>DraftCP — Licenza d'Uso (EULA)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <button class="hamburger" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <img src="Sezione_00_Home_page/logo_draftcp.png" alt="DraftCP Logo" class="header-logo">
+    <span class="header-title">Licenza d'Uso (EULA)</span>
+    <span class="header-version">v1.0 — Luglio 2026</span>
+    <nav class="header-links">
+      <a href="index.html">← Manuale</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <div class="sidebar-section-label">Indice EULA</div>
+        <ul>
+          <li><a href="#eula-premessa"><span class="nav-icon">📌</span> Premessa</a></li>
+          <li><a href="#eula-art1"><span class="nav-icon">1️⃣</span> Art. 1 — Definizioni</a></li>
+          <li><a href="#eula-art2"><span class="nav-icon">2️⃣</span> Art. 2 — Concessione</a></li>
+          <li><a href="#eula-art3"><span class="nav-icon">3️⃣</span> Art. 3 — Limitazioni</a></li>
+          <li><a href="#eula-art4"><span class="nav-icon">4️⃣</span> Art. 4 — Proprietà Intellettuale</a></li>
+          <li><a href="#eula-art5"><span class="nav-icon">5️⃣</span> Art. 5 — Attivazione</a></li>
+          <li><a href="#eula-art6"><span class="nav-icon">6️⃣</span> Art. 6 — Aggiornamenti</a></li>
+          <li><a href="#eula-art7"><span class="nav-icon">7️⃣</span> Art. 7 — Garanzie</a></li>
+          <li><a href="#eula-art8"><span class="nav-icon">8️⃣</span> Art. 8 — Responsabilità</a></li>
+          <li><a href="#eula-art9"><span class="nav-icon">9️⃣</span> Art. 9 — Durata e Recesso</a></li>
+          <li><a href="#eula-art10"><span class="nav-icon">🔟</span> Art. 10 — Privacy</a></li>
+          <li><a href="#eula-art11"><span class="nav-icon">⚖️</span> Art. 11 — Legge Applicabile</a></li>
+          <li><a href="#eula-art12"><span class="nav-icon">📝</span> Art. 12 — Disposizioni Finali</a></li>
+        </ul>
+        <div class="sidebar-section-label">Documenti correlati</div>
+        <ul>
+          <li><a href="index.html"><span class="nav-icon">📖</span> Manuale Utente</a></li>
+          <li><a href="privacy.html"><span class="nav-icon">🔒</span> Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="doc-section" id="eula-premessa" style="margin-bottom:40px; padding-bottom:30px;">
+        <span class="section-tag">Documento Legale</span>
+        <h1 class="section-title">Contratto di Licenza con l'Utente Finale</h1>
+        <p class="section-lead">
+          Leggere attentamente il presente Contratto prima di installare o utilizzare il software DraftCP.
+          L'utilizzo del software implica l'accettazione integrale delle condizioni qui descritte.
+        </p>
+        <div class="callout warning">
+          <span class="callout-icon">⚠️</span>
+          <div class="callout-content">
+            <strong>Accettazione obbligatoria</strong>
+            L'installazione, la copia, il download o qualsiasi altra forma di utilizzo del software
+            DraftCP costituisce accettazione integrale del presente contratto. In caso di mancata
+            accettazione, l'Utente è tenuto a non installare né utilizzare il software.
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="eula-art1">
+        <h2>Art. 1 — Definizioni</h2>
+        <p>Ai fini del presente contratto si intende per:</p>
+        <ul>
+          <li><strong>"Software"</strong>: il programma DraftCP, compresi tutti i file sorgente AutoLISP (.lsp), i file
+            di interfaccia (.dcl), le risorse grafiche, i blocchi DWG e la relativa documentazione.</li>
+          <li><strong>"Licenziante"</strong>: il Geom. Olivero Cristian, sviluppatore e titolare esclusivo dei diritti
+            sul Software.</li>
+          <li><strong>"Utente"</strong> o <strong>"Licenziatario"</strong>: la persona fisica o giuridica che utilizza
+            il Software in forza del presente contratto.</li>
+          <li><strong>"Licenza"</strong>: il diritto non esclusivo, non cedibile e non trasferibile di utilizzare il
+            Software alle condizioni stabilite dal presente contratto.</li>
+          <li><strong>"Codice Macchina"</strong>: l'identificativo univoco del PC dell'Utente, calcolato
+            dall'applicazione a partire dall'UUID della scheda madre tramite algoritmo hash non invertibile.</li>
+          <li><strong>"Attivazione"</strong>: il processo di verifica online che associa la Licenza al Codice Macchina
+            del PC dell'Utente.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="eula-art2">
+        <h2>Art. 2 — Concessione della Licenza</h2>
+        <p>
+          Il Licenziante concede all'Utente, previa Attivazione e per tutta la durata contrattuale,
+          una Licenza personale, non esclusiva, non cedibile e non trasferibile per:
+        </p>
+        <ul>
+          <li>Installare e utilizzare il Software su <strong>un (1) solo computer</strong> di esclusiva pertinenza
+            dell'Utente.</li>
+          <li>Utilizzare il Software esclusivamente per finalità professionali o personali dell'Utente stesso.</li>
+          <li>Consultare e stampare la documentazione di accompagnamento per uso personale.</li>
+        </ul>
+        <div class="callout note">
+          <span class="callout-icon">📌</span>
+          <div class="callout-content">
+            <strong>Licenza per singola macchina</strong>
+            La Licenza è collegata all'hardware del singolo PC su cui viene attivata. Per utilizzare
+            DraftCP su un secondo computer è necessario acquistare una Licenza aggiuntiva.
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="eula-art3">
+        <h2>Art. 3 — Limitazioni d'Uso</h2>
+        <p>L'Utente non è autorizzato a:</p>
+        <ul>
+          <li>Copiare, distribuire, noleggiare, cedere in prestito o sublicenziare il Software a terzi, anche a titolo
+            gratuito.</li>
+          <li>Modificare, tradurre, decompilare, disassemblare o effettuare operazioni di reverse engineering sul
+            Software.</li>
+          <li>Rimuovere, alterare o oscurare le indicazioni di copyright, marchi o avvisi di proprietà presenti nel
+            Software.</li>
+          <li>Utilizzare il Software per attività illegali o in violazione di normative vigenti.</li>
+          <li>Aggirare, disabilitare o manomettere i meccanismi di protezione e di verifica della Licenza.</li>
+          <li>Utilizzare il Software su più di un computer contemporaneamente con la stessa Licenza.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="eula-art4">
+        <h2>Art. 4 — Proprietà Intellettuale</h2>
+        <p>
+          Il Software, inclusi tutti i codici sorgente, gli algoritmi, le interfacce, la documentazione
+          e ogni altro componente, è e rimane di esclusiva proprietà del Licenziante.
+          Il presente contratto non trasferisce all'Utente alcun diritto di proprietà intellettuale
+          sul Software, ma concede esclusivamente il diritto di utilizzo nei limiti sopra descritti.
+        </p>
+        <p>
+          DraftCP e il logo associato sono marchi del Licenziante. L'Utente non è autorizzato
+          a utilizzare tali marchi senza previo consenso scritto.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art5">
+        <h2>Art. 5 — Attivazione e Verifica della Licenza</h2>
+        <p>
+          Per poter utilizzare il Software è necessaria l'Attivazione della Licenza. Il Software
+          verificherà automaticamente la validità della Licenza secondo le seguenti modalità:
+        </p>
+        <ul>
+          <li><strong>Verifica online:</strong> al primo avvio della sessione di ogni giorno, il Software
+            contatta il server di licenza del Licenziante per verificare lo stato della Licenza.</li>
+          <li><strong>Periodo di grazia offline:</strong> in assenza di connessione a Internet, il Software
+            continua a funzionare normalmente per un periodo massimo di <strong>5 (cinque) giorni
+              consecutivi</strong> dall'ultima verifica riuscita.</li>
+          <li><strong>Scaduto il periodo di grazia:</strong> il Software richiederà la verifica online
+            prima di poter essere utilizzato.</li>
+        </ul>
+        <p>
+          Il Licenziante si riserva il diritto di revocare l'Attivazione in caso di violazione
+          del presente contratto, previa notifica all'Utente.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art6">
+        <h2>Art. 6 — Aggiornamenti</h2>
+        <p>
+          Il Licenziante potrà rilasciare aggiornamenti, correzioni di bug o nuove versioni del
+          Software a propria discrezione. Gli aggiornamenti potranno essere gratuiti o a pagamento;
+          in quest'ultimo caso l'Utente sarà informato preventivamente.
+        </p>
+        <p>
+          La Licenza acquisita per una versione non garantisce automaticamente il diritto agli
+          aggiornamenti a versioni successive maggiori.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art7">
+        <h2>Art. 7 — Assenza di Garanzie</h2>
+        <p>
+          Il Software è fornito <strong>"così com'è"</strong> (<em>as is</em>), senza garanzie di
+          alcun tipo, espresse o implicite, ivi incluse, a titolo esemplificativo, le garanzie
+          implicite di commerciabilità, idoneità per uno scopo specifico e non violazione di diritti
+          di terzi.
+        </p>
+        <p>
+          Il Licenziante non garantisce che il Software sia privo di errori, che il suo funzionamento
+          sia ininterrotto, né che sia compatibile con versioni di AutoCAD diverse da quelle
+          indicate nella documentazione ufficiale.
+        </p>
+        <p>
+          L'Utente utilizza il Software a proprio rischio e pericolo e rimane interamente responsabile
+          dei risultati ottenuti mediante l'impiego dello stesso.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art8">
+        <h2>Art. 8 — Limitazione di Responsabilità</h2>
+        <p>
+          Nella misura massima consentita dalla legge applicabile, il Licenziante non sarà in
+          nessun caso responsabile per danni diretti, indiretti, incidentali, speciali, punitivi
+          o consequenziali di qualsiasi natura, compresi a titolo esemplificativo:
+        </p>
+        <ul>
+          <li>Perdita di dati o danni ai file del disegno AutoCAD;</li>
+          <li>Lucro cessante o perdita di opportunità commerciali;</li>
+          <li>Danni derivanti dall'uso improprio del Software o dalla non conformità ai requisiti di sistema;</li>
+          <li>Danni derivanti da interruzioni del servizio di verifica licenza per cause di forza maggiore.</li>
+        </ul>
+        <p>
+          La responsabilità complessiva del Licenziante nei confronti dell'Utente, per qualsiasi
+          causa, non potrà in ogni caso eccedere l'importo pagato dall'Utente per la Licenza
+          negli ultimi dodici (12) mesi.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art9">
+        <h2>Art. 9 — Durata e Recesso</h2>
+        <p>
+          Il presente contratto ha efficacia dalla data di prima installazione o utilizzo del Software
+          e rimane in vigore fino alla sua cessazione.
+        </p>
+        <p>Il presente contratto si risolve automaticamente, senza necessità di preavviso, nei seguenti casi:</p>
+        <ul>
+          <li>Violazione da parte dell'Utente di qualsiasi disposizione del presente contratto;</li>
+          <li>Scadenza della Licenza (per le licenze a termine);</li>
+          <li>Revoca della Licenza da parte del Licenziante per giusta causa.</li>
+        </ul>
+        <p>
+          In caso di cessazione del contratto per qualsiasi motivo, l'Utente è tenuto a cessare
+          immediatamente l'utilizzo del Software e a eliminare tutte le copie in suo possesso.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art10">
+        <h2>Art. 10 — Trattamento dei Dati Personali</h2>
+        <p>
+          Per il trattamento dei dati personali raccolti durante l'utilizzo del Software (in
+          particolare il Codice Macchina utilizzato per l'attivazione della Licenza), si rimanda
+          all'<a href="privacy.html" style="color:var(--accent-blue);">Informativa sulla Privacy</a>
+          disponibile nella documentazione del Software.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art11">
+        <h2>Art. 11 — Legge Applicabile e Foro Competente</h2>
+        <p>
+          Il presente contratto è regolato dalla legge italiana. Per qualsiasi controversia relativa
+          all'interpretazione, esecuzione o risoluzione del presente contratto, le parti eleggono
+          come foro esclusivamente competente il Tribunale del luogo di residenza del Licenziante,
+          salvo diversi obblighi di legge in favore del Consumatore.
+        </p>
+      </section>
+
+      <section class="doc-section" id="eula-art12">
+        <h2>Art. 12 — Disposizioni Finali</h2>
+        <p>
+          Qualora una o più clausole del presente contratto risultino nulle, annullabili o
+          inefficaci, le restanti clausole manterranno piena validità ed efficacia.
+        </p>
+        <p>
+          Il mancato esercizio da parte del Licenziante di un diritto previsto dal presente
+          contratto non costituisce rinuncia al medesimo.
+        </p>
+        <p>
+          Il presente contratto costituisce l'intero accordo tra le parti relativamente al
+          Software e sostituisce qualsiasi precedente accordo, dichiarazione o intesa, verbale
+          o scritta, avente il medesimo oggetto.
+        </p>
+        <p>
+          Il Licenziante si riserva il diritto di modificare il presente contratto in qualsiasi
+          momento; le modifiche saranno comunicate attraverso i canali ufficiali e avranno
+          efficacia dalla data di pubblicazione.
+        </p>
+        <div class="callout note" style="margin-top:32px;">
+          <span class="callout-icon">📌</span>
+          <div class="callout-content">
+            <strong>Versione del documento</strong>
+            EULA versione 1.0 — Data di emissione: Luglio 2026<br>
+            Titolare: Geom. Olivero Cristian &mdash; sviluppatore O.C.G.
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span>Copyright &copy; 2026 Geom. Olivero Cristian &mdash; Tutti i diritti riservati.</span>
+    <span>
+      <a href="index.html">Manuale Utente</a> &nbsp;·&nbsp;
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </footer>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<script>
+  // ── Hamburger / Sidebar drawer ──────────────────────────────
+  (function () {
+    var btn     = document.getElementById('menuBtn');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    if (!btn || !sidebar || !overlay) return;
+
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('active');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', function () {
+      sidebar.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+
+    // Close when a nav link is clicked (smooth scroll on same page)
+    sidebar.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+</body>
+
+</html>
