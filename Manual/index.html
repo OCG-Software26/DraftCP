@@ -516,7 +516,54 @@
           </div>
         </div>
 
-        <h2>Come avviare il comando</h2>
+                  <h2>Comportamento dei blocchi con oggetti nidificati</h2>
+          <p>
+            Quando nella vista di partenza sono presenti <strong>riferimenti di blocco</strong> (inserimenti),
+            il comando <span class="cmd">CPB</span> li include nel blocco di controllo e ne aggiorna il layer
+            del riferimento stesso. Tuttavia, <strong>gli oggetti contenuti all'interno della definizione di
+            blocco non vengono modificati</strong>: i loro layer rimangono quelli originali con cui il blocco
+            è stato definito.
+          </p>
+          <p>
+            Questo significa che se un blocco (ad esempio un pilastro) è stato definito con le sue linee sul
+            layer <code>0.4_01.Pianta_piano_terreno</code>, quelle linee rimarranno su quel layer anche quando
+            il riferimento di blocco viene incluso nel blocco di controllo destinato a un'altra vista. Di
+            conseguenza, la visibilità e il colore di quegli oggetti potrebbero non corrispondere a quelli
+            attesi nella vista di destinazione.
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Come rendere i blocchi compatibili con CPB</strong>
+              Se si desidera che gli oggetti contenuti in un blocco siano visibili e correttamente colorati
+              quando il riferimento di blocco viene incluso in un blocco di controllo per un'altra vista,
+              occorre definirli nel modo seguente:
+              <ul style="margin-top:8px; padding-left:18px;">
+                <li>Mettere tutti gli oggetti all'interno della definizione di blocco sul <strong>layer 0</strong>.</li>
+                <li>Impostare il colore di ciascun oggetto su <strong>DaBlocco</strong> (<em>ByBlock</em>).</li>
+              </ul>
+              In questo modo gli oggetti erediteranno il layer e il colore del riferimento di blocco che li
+              contiene, che a sua volta viene gestito correttamente dalla conversione dei layer di
+              <span class="cmd">CPB</span>.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Esempio pratico: pilastro con layer 0 e colore DaBlocco</strong>
+              Si supponga di avere un blocco <code>Pilastro_30x30</code> con le sue linee definite sul
+              layer 0 e con il colore DaBlocco. Quando <span class="cmd">CPB</span> crea il blocco
+              di controllo dalla pianta verso la sezione, il <em>riferimento</em> al blocco
+              <code>Pilastro_30x30</code> viene assegnato al layer della vista di destinazione
+              (es. <code>0.4_03.Sezione_A-A'</code>). Grazie all'impostazione DaBlocco, le linee
+              del pilastro erediteranno automaticamente il layer e il colore del riferimento,
+              risultando correttamente visibili e colorate nella vista di destinazione.
+            </div>
+          </div>
+
+          <h2>Come avviare il comando</h2>
         <p>Digitare <span class="cmd">CPS</span> nella riga di comando oppure cliccare il pulsante
           <strong>Orientamento</strong> nella Dashboard.
         </p>
@@ -672,7 +719,54 @@
           </div>
         </div>
 
-        <h2>Come avviare il comando</h2>
+                  <h2>Comportamento dei blocchi con oggetti nidificati</h2>
+          <p>
+            Quando nella vista di partenza sono presenti <strong>riferimenti di blocco</strong> (inserimenti),
+            il comando <span class="cmd">CPB</span> li include nel blocco di controllo e ne aggiorna il layer
+            del riferimento stesso. Tuttavia, <strong>gli oggetti contenuti all'interno della definizione di
+            blocco non vengono modificati</strong>: i loro layer rimangono quelli originali con cui il blocco
+            è stato definito.
+          </p>
+          <p>
+            Questo significa che se un blocco (ad esempio un pilastro) è stato definito con le sue linee sul
+            layer <code>0.4_01.Pianta_piano_terreno</code>, quelle linee rimarranno su quel layer anche quando
+            il riferimento di blocco viene incluso nel blocco di controllo destinato a un'altra vista. Di
+            conseguenza, la visibilità e il colore di quegli oggetti potrebbero non corrispondere a quelli
+            attesi nella vista di destinazione.
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Come rendere i blocchi compatibili con CPB</strong>
+              Se si desidera che gli oggetti contenuti in un blocco siano visibili e correttamente colorati
+              quando il riferimento di blocco viene incluso in un blocco di controllo per un'altra vista,
+              occorre definirli nel modo seguente:
+              <ul style="margin-top:8px; padding-left:18px;">
+                <li>Mettere tutti gli oggetti all'interno della definizione di blocco sul <strong>layer 0</strong>.</li>
+                <li>Impostare il colore di ciascun oggetto su <strong>DaBlocco</strong> (<em>ByBlock</em>).</li>
+              </ul>
+              In questo modo gli oggetti erediteranno il layer e il colore del riferimento di blocco che li
+              contiene, che a sua volta viene gestito correttamente dalla conversione dei layer di
+              <span class="cmd">CPB</span>.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Esempio pratico: pilastro con layer 0 e colore DaBlocco</strong>
+              Si supponga di avere un blocco <code>Pilastro_30x30</code> con le sue linee definite sul
+              layer 0 e con il colore DaBlocco. Quando <span class="cmd">CPB</span> crea il blocco
+              di controllo dalla pianta verso la sezione, il <em>riferimento</em> al blocco
+              <code>Pilastro_30x30</code> viene assegnato al layer della vista di destinazione
+              (es. <code>0.4_03.Sezione_A-A'</code>). Grazie all'impostazione DaBlocco, le linee
+              del pilastro erediteranno automaticamente il layer e il colore del riferimento,
+              risultando correttamente visibili e colorate nella vista di destinazione.
+            </div>
+          </div>
+
+          <h2>Come avviare il comando</h2>
         <p>Digitare <span class="cmd">CPV</span> nella riga di comando oppure cliccare <strong>Generazione
             Viste</strong> nella Dashboard. Si apre la finestra di configurazione iniziale:</p>
 
@@ -1042,6 +1136,53 @@
             <p class="media-caption">La pianta dopo il tracciamento: le linee blu (layer 0.4) tracciano con precisione
               tutte le pareti dell'edificio, con giunti chiusi agli angoli e agli innesti. Il tracciamento completo di
               questa pianta ha richiesto meno di cinque minuti.</p>
+          </div>
+
+                    <h2>Comportamento dei blocchi con oggetti nidificati</h2>
+          <p>
+            Quando nella vista di partenza sono presenti <strong>riferimenti di blocco</strong> (inserimenti),
+            il comando <span class="cmd">CPB</span> li include nel blocco di controllo e ne aggiorna il layer
+            del riferimento stesso. Tuttavia, <strong>gli oggetti contenuti all'interno della definizione di
+            blocco non vengono modificati</strong>: i loro layer rimangono quelli originali con cui il blocco
+            è stato definito.
+          </p>
+          <p>
+            Questo significa che se un blocco (ad esempio un pilastro) è stato definito con le sue linee sul
+            layer <code>0.4_01.Pianta_piano_terreno</code>, quelle linee rimarranno su quel layer anche quando
+            il riferimento di blocco viene incluso nel blocco di controllo destinato a un'altra vista. Di
+            conseguenza, la visibilità e il colore di quegli oggetti potrebbero non corrispondere a quelli
+            attesi nella vista di destinazione.
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Come rendere i blocchi compatibili con CPB</strong>
+              Se si desidera che gli oggetti contenuti in un blocco siano visibili e correttamente colorati
+              quando il riferimento di blocco viene incluso in un blocco di controllo per un'altra vista,
+              occorre definirli nel modo seguente:
+              <ul style="margin-top:8px; padding-left:18px;">
+                <li>Mettere tutti gli oggetti all'interno della definizione di blocco sul <strong>layer 0</strong>.</li>
+                <li>Impostare il colore di ciascun oggetto su <strong>DaBlocco</strong> (<em>ByBlock</em>).</li>
+              </ul>
+              In questo modo gli oggetti erediteranno il layer e il colore del riferimento di blocco che li
+              contiene, che a sua volta viene gestito correttamente dalla conversione dei layer di
+              <span class="cmd">CPB</span>.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Esempio pratico: pilastro con layer 0 e colore DaBlocco</strong>
+              Si supponga di avere un blocco <code>Pilastro_30x30</code> con le sue linee definite sul
+              layer 0 e con il colore DaBlocco. Quando <span class="cmd">CPB</span> crea il blocco
+              di controllo dalla pianta verso la sezione, il <em>riferimento</em> al blocco
+              <code>Pilastro_30x30</code> viene assegnato al layer della vista di destinazione
+              (es. <code>0.4_03.Sezione_A-A'</code>). Grazie all'impostazione DaBlocco, le linee
+              del pilastro erediteranno automaticamente il layer e il colore del riferimento,
+              risultando correttamente visibili e colorate nella vista di destinazione.
+            </div>
           </div>
 
           <h2>Come avviare il comando</h2>
@@ -1616,6 +1757,53 @@
             Questo fa sì che il blocco rispetti la visibilità e i colori della vista di destinazione.
           </p>
 
+                    <h2>Comportamento dei blocchi con oggetti nidificati</h2>
+          <p>
+            Quando nella vista di partenza sono presenti <strong>riferimenti di blocco</strong> (inserimenti),
+            il comando <span class="cmd">CPB</span> li include nel blocco di controllo e ne aggiorna il layer
+            del riferimento stesso. Tuttavia, <strong>gli oggetti contenuti all'interno della definizione di
+            blocco non vengono modificati</strong>: i loro layer rimangono quelli originali con cui il blocco
+            è stato definito.
+          </p>
+          <p>
+            Questo significa che se un blocco (ad esempio un pilastro) è stato definito con le sue linee sul
+            layer <code>0.4_01.Pianta_piano_terreno</code>, quelle linee rimarranno su quel layer anche quando
+            il riferimento di blocco viene incluso nel blocco di controllo destinato a un'altra vista. Di
+            conseguenza, la visibilità e il colore di quegli oggetti potrebbero non corrispondere a quelli
+            attesi nella vista di destinazione.
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Come rendere i blocchi compatibili con CPB</strong>
+              Se si desidera che gli oggetti contenuti in un blocco siano visibili e correttamente colorati
+              quando il riferimento di blocco viene incluso in un blocco di controllo per un'altra vista,
+              occorre definirli nel modo seguente:
+              <ul style="margin-top:8px; padding-left:18px;">
+                <li>Mettere tutti gli oggetti all'interno della definizione di blocco sul <strong>layer 0</strong>.</li>
+                <li>Impostare il colore di ciascun oggetto su <strong>DaBlocco</strong> (<em>ByBlock</em>).</li>
+              </ul>
+              In questo modo gli oggetti erediteranno il layer e il colore del riferimento di blocco che li
+              contiene, che a sua volta viene gestito correttamente dalla conversione dei layer di
+              <span class="cmd">CPB</span>.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Esempio pratico: pilastro con layer 0 e colore DaBlocco</strong>
+              Si supponga di avere un blocco <code>Pilastro_30x30</code> con le sue linee definite sul
+              layer 0 e con il colore DaBlocco. Quando <span class="cmd">CPB</span> crea il blocco
+              di controllo dalla pianta verso la sezione, il <em>riferimento</em> al blocco
+              <code>Pilastro_30x30</code> viene assegnato al layer della vista di destinazione
+              (es. <code>0.4_03.Sezione_A-A'</code>). Grazie all'impostazione DaBlocco, le linee
+              del pilastro erediteranno automaticamente il layer e il colore del riferimento,
+              risultando correttamente visibili e colorate nella vista di destinazione.
+            </div>
+          </div>
+
           <h2>Come avviare il comando</h2>
           <p>Digitare <span class="cmd">CPB</span> oppure cliccare <strong>Blocchi di Controllo</strong> nella
             Dashboard.
@@ -1734,6 +1922,53 @@
               (<kbd>BEDIT</kbd>) e selezionare il blocco corrispondente dalla lista.
               Il blocco rimane nel disegno fino alla prossima esportazione finale con
               <span class="cmd">CPE</span> (o fino a quando non viene eliminato manualmente).
+            </div>
+          </div>
+
+                    <h2>Comportamento dei blocchi con oggetti nidificati</h2>
+          <p>
+            Quando nella vista di partenza sono presenti <strong>riferimenti di blocco</strong> (inserimenti),
+            il comando <span class="cmd">CPB</span> li include nel blocco di controllo e ne aggiorna il layer
+            del riferimento stesso. Tuttavia, <strong>gli oggetti contenuti all'interno della definizione di
+            blocco non vengono modificati</strong>: i loro layer rimangono quelli originali con cui il blocco
+            è stato definito.
+          </p>
+          <p>
+            Questo significa che se un blocco (ad esempio un pilastro) è stato definito con le sue linee sul
+            layer <code>0.4_01.Pianta_piano_terreno</code>, quelle linee rimarranno su quel layer anche quando
+            il riferimento di blocco viene incluso nel blocco di controllo destinato a un'altra vista. Di
+            conseguenza, la visibilità e il colore di quegli oggetti potrebbero non corrispondere a quelli
+            attesi nella vista di destinazione.
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Come rendere i blocchi compatibili con CPB</strong>
+              Se si desidera che gli oggetti contenuti in un blocco siano visibili e correttamente colorati
+              quando il riferimento di blocco viene incluso in un blocco di controllo per un'altra vista,
+              occorre definirli nel modo seguente:
+              <ul style="margin-top:8px; padding-left:18px;">
+                <li>Mettere tutti gli oggetti all'interno della definizione di blocco sul <strong>layer 0</strong>.</li>
+                <li>Impostare il colore di ciascun oggetto su <strong>DaBlocco</strong> (<em>ByBlock</em>).</li>
+              </ul>
+              In questo modo gli oggetti erediteranno il layer e il colore del riferimento di blocco che li
+              contiene, che a sua volta viene gestito correttamente dalla conversione dei layer di
+              <span class="cmd">CPB</span>.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Esempio pratico: pilastro con layer 0 e colore DaBlocco</strong>
+              Si supponga di avere un blocco <code>Pilastro_30x30</code> con le sue linee definite sul
+              layer 0 e con il colore DaBlocco. Quando <span class="cmd">CPB</span> crea il blocco
+              di controllo dalla pianta verso la sezione, il <em>riferimento</em> al blocco
+              <code>Pilastro_30x30</code> viene assegnato al layer della vista di destinazione
+              (es. <code>0.4_03.Sezione_A-A'</code>). Grazie all'impostazione DaBlocco, le linee
+              del pilastro erediteranno automaticamente il layer e il colore del riferimento,
+              risultando correttamente visibili e colorate nella vista di destinazione.
             </div>
           </div>
 
@@ -1933,6 +2168,53 @@
             ripristinato automaticamente tramite UNDO.
           </p>
 
+                    <h2>Comportamento dei blocchi con oggetti nidificati</h2>
+          <p>
+            Quando nella vista di partenza sono presenti <strong>riferimenti di blocco</strong> (inserimenti),
+            il comando <span class="cmd">CPB</span> li include nel blocco di controllo e ne aggiorna il layer
+            del riferimento stesso. Tuttavia, <strong>gli oggetti contenuti all'interno della definizione di
+            blocco non vengono modificati</strong>: i loro layer rimangono quelli originali con cui il blocco
+            è stato definito.
+          </p>
+          <p>
+            Questo significa che se un blocco (ad esempio un pilastro) è stato definito con le sue linee sul
+            layer <code>0.4_01.Pianta_piano_terreno</code>, quelle linee rimarranno su quel layer anche quando
+            il riferimento di blocco viene incluso nel blocco di controllo destinato a un'altra vista. Di
+            conseguenza, la visibilità e il colore di quegli oggetti potrebbero non corrispondere a quelli
+            attesi nella vista di destinazione.
+          </p>
+
+          <div class="callout note">
+            <span class="callout-icon">&#x1F4CC;</span>
+            <div class="callout-content">
+              <strong>Come rendere i blocchi compatibili con CPB</strong>
+              Se si desidera che gli oggetti contenuti in un blocco siano visibili e correttamente colorati
+              quando il riferimento di blocco viene incluso in un blocco di controllo per un'altra vista,
+              occorre definirli nel modo seguente:
+              <ul style="margin-top:8px; padding-left:18px;">
+                <li>Mettere tutti gli oggetti all'interno della definizione di blocco sul <strong>layer 0</strong>.</li>
+                <li>Impostare il colore di ciascun oggetto su <strong>DaBlocco</strong> (<em>ByBlock</em>).</li>
+              </ul>
+              In questo modo gli oggetti erediteranno il layer e il colore del riferimento di blocco che li
+              contiene, che a sua volta viene gestito correttamente dalla conversione dei layer di
+              <span class="cmd">CPB</span>.
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <span class="callout-icon">&#x1F4A1;</span>
+            <div class="callout-content">
+              <strong>Esempio pratico: pilastro con layer 0 e colore DaBlocco</strong>
+              Si supponga di avere un blocco <code>Pilastro_30x30</code> con le sue linee definite sul
+              layer 0 e con il colore DaBlocco. Quando <span class="cmd">CPB</span> crea il blocco
+              di controllo dalla pianta verso la sezione, il <em>riferimento</em> al blocco
+              <code>Pilastro_30x30</code> viene assegnato al layer della vista di destinazione
+              (es. <code>0.4_03.Sezione_A-A'</code>). Grazie all'impostazione DaBlocco, le linee
+              del pilastro erediteranno automaticamente il layer e il colore del riferimento,
+              risultando correttamente visibili e colorate nella vista di destinazione.
+            </div>
+          </div>
+
           <h2>Come avviare il comando</h2>
           <p>Digitare <span class="cmd">CPE</span> oppure cliccare <strong>Esportazione Finale</strong> nella Dashboard.
             Il comando non apre finestre di dialogo: inizia immediatamente l'elaborazione e notifica il progresso nella
@@ -2109,6 +2391,26 @@
                 già creati con <span class="cmd">CPB</span>. Eliminare i blocchi di controllo
                 obsoleti manualmente (con il comando <kbd>BEDIT</kbd> → elimina definizione)
                 e ricrearli con CPB.</p>
+            </div>
+          </details>
+
+                    <details class="faq-item">
+            <summary>I blocchi del mio disegno non sono visibili nel blocco di controllo CPB</summary>
+            <div class="faq-body">
+              <p>Il comando <span class="cmd">CPB</span> converte il layer dei <em>riferimenti</em> di blocco
+                presenti nella vista, ma non modifica gli oggetti all'interno delle definizioni di blocco
+                (gli oggetti nidificati). Se un blocco è stato definito con le sue geometrie su un layer
+                specifico della vista (es. <code>0.4_01.Pianta_piano_terreno</code>), quelle linee
+                rimarranno su quel layer originale anche nel blocco di controllo destinato a un'altra
+                vista.</p>
+              <p><strong>Soluzione:</strong> Ridefinire il blocco con tutti gli oggetti interni sul
+                <strong>layer 0</strong> e con il colore impostato su <strong>DaBlocco</strong>
+                (<em>ByBlock</em>). In questo modo ogni riferimento di blocco eredita il layer e il
+                colore dal contesto in cui è inserito, e la conversione di <span class="cmd">CPB</span>
+                funzionerà correttamente.</p>
+              <p>Per modificare un blocco esistente, usare il comando <kbd>BEDIT</kbd> di AutoCAD,
+                selezionare tutti gli oggetti interni e impostare layer = <code>0</code> e
+                colore = <code>DaBlocco</code>.</p>
             </div>
           </details>
 
